@@ -304,13 +304,13 @@
             },
         });
 
-        //Google Maps
-        $("#map").googleMap({
-            zoom: 16 // Google Map ZOOM. You can change this value
-        });
-        $("#map").addMarker({
-            address: "S601 Townsend Street, San Francisco, California, USA", // Your Address. Change it
-        });
+        //Google Maps //直接使用嵌入載入地圖
+        // $("#map").googleMap({
+        //     zoom: 16 // Google Map ZOOM. You can change this value
+        // });
+        // $("#map").addMarker({
+        //     address: "桃園市中壢區中大路國立中央大學", // Your Address. Change it
+        // });
     });
 
 })(jQuery);
