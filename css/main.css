@@ -1308,44 +1308,11 @@ textarea.form-control, textarea.form-control:focus {
   padding: 0;
 }
 
-/* --- Skills Values --- */
+/* --- Skills Values --- 
 .skills-second-style .skill-container.skill-1 .skill-percentage {
   width: 95%;
 }
-
-.skills-second-style .skill-container.skill-2 .skill-percentage {
-  width: 65%;
-}
-
-.skills-second-style .skill-container.skill-3 .skill-percentage {
-  width: 40%;
-}
-
-.skills-second-style .skill-container.skill-4 .skill-percentage {
-  width: 90%;
-}
-
-.skills-second-style .skill-container.skill-5 .skill-percentage {
-  width: 20%;
-}
-
-.skills-second-style .skill-container.skill-6 .skill-percentage {
-  width: 50%;
-}
-
-.skills-second-style .skill-container.skill-7 .skill-percentage {
-  width: 80%;
-}
-
-.skills-second-style .skill-container.skill-8 .skill-percentage {
-  width: 95%;
-}
-
-.skills-second-style .skill-container.skill-9 .skill-percentage {
-  width: 30%;
-}
-
-/* --- End of Skills Values --- */
+ --- End of Skills Values --- */
 
 /* Animate skills on subpage load */
 .pt-page .skills-second-style .skill-percentage,
@@ -1427,7 +1394,7 @@ textarea.form-control, textarea.form-control:focus {
   margin: 0 0 5px;
 }
 
-.certi-id {
+/* .certi-id {
   font-size: .9em;
   color: #777;
 }
@@ -1436,6 +1403,10 @@ textarea.form-control, textarea.form-control:focus {
   font-size: .7em;
   color: #777;
   opacity: .7;
+} */
+.certi-other{
+  font-size: .10em;
+  color: #777;
 }
 /* --- End of Certificates --- */
 
