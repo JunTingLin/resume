@@ -2,25 +2,7 @@
 <html lang="zh-TW" class="no-js">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Lin, Jun-Ting@NCU</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="林俊霆的個人網頁簡歷" />
-  <meta name="keywords" content="林俊霆, 簡歷, 履歷, 中央大學, NCU, resume, CV, portfolio" />
-  <meta name="author" content="林俊霆" />
-  <link rel="shortcut icon" href="favicon.ico">
-
-
-  <link rel="stylesheet" href="css/reset.css" type="text/css">
-  <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
-  <link rel="stylesheet" href="css/animations.css" type="text/css">
-  <link rel="stylesheet" href="css/perfect-scrollbar.css" type="text/css">
-  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-  <link rel="stylesheet" href="css/main.css" type="text/css">
-
-  <script src="js/modernizr.custom.js"></script>
+  <?php include_once 'head.php'; ?>
 </head>
 
 <body>
@@ -40,80 +22,9 @@
   <div class="page">
     <div class="page-content">
 
-      <header id="site_header" class="header mobile-menu-hide">
-        <div class="header-content">
-          <div class="header-photo">
-            <img src="img/main_photo.jpg" alt="林俊霆">
-          </div>
-          <div class="header-titles">
-            <h2>林俊霆</h2>
-            <h4>Lin, Jun-Ting</h4>
-          </div>
-        </div>
+      <!-- 左側導覽列 -->
+      <?php include_once 'nav.php'; ?>
 
-        <ul class="main-menu">
-          <li class="active">
-            <a href="#home" class="nav-anim">
-              <span class="menu-icon lnr lnr-home"></span>
-              <span class="link-text">首頁</span>
-            </a>
-          </li>
-          <li>
-            <a href="#about-me" class="nav-anim">
-              <span class="menu-icon lnr lnr-user"></span>
-              <span class="link-text">關於我</span>
-            </a>
-          </li>
-          <li>
-            <a href="#resume" class="nav-anim">
-              <span class="menu-icon lnr lnr-graduation-hat"></span>
-              <span class="link-text">個人簡歷</span>
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" class="nav-anim">
-              <span class="menu-icon lnr lnr-briefcase"></span>
-              <span class="link-text">我的作品</span>
-            </a>
-          </li>
-          <li>
-            <a href="#blog" class="nav-anim">
-              <span class="menu-icon lnr lnr-book"></span>
-              <span class="link-text">部落格</span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-anim">
-              <span class="menu-icon lnr lnr-envelope"></span>
-              <span class="link-text">聯絡我</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="social-links">
-          <ul>
-            <li><a href="https://github.com/JunTingLin" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100009889784302" target="_blank"><i
-                  class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.instagram.com/timothy_lin_91218/" target="_blank"><i
-                  class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-
-        <div class="header-buttons">
-          <a href="doc/CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
-        </div>
-
-        <div class="copyrights">© 2020 JungTing All rights reserved.</div>
-      </header>
-
-      <!-- Mobile Navigation -->
-      <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- End Mobile Navigation -->
 
       <!-- Arrows Nav -->
       <div class="lmpixels-arrows-nav">
@@ -637,223 +548,12 @@
           </section>
           <!-- End of Resume Subpage -->
 
-          <!-- Portfolio Subpage -->
-          <section data-id="portfolio" class="animated-section">
-            <div class="page-title">
-              <h2>我的作品</h2>
-            </div>
-
-            <div class="section-content">
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <!-- Portfolio Content -->
-                  <div class="portfolio-content">
-
-                    <ul class="portfolio-filters">
-                      <li class="active">
-                        <a class="filter btn btn-sm btn-link" data-group="category_all">所有</a>
-                      </li>
-                      <li>
-                        <a class="filter btn btn-sm btn-link" data-group="category_project">專案</a>
-                      </li>
-                      <li>
-                        <a class="filter btn btn-sm btn-link" data-group="category_IG-videos">IG影片</a>
-                      </li>
-                      <li>
-                        <a class="filter btn btn-sm btn-link" data-group="category_youtube-videos">YouTube影片</a>
-                      </li>
-                    </ul>
-
-                    <!-- Portfolio Grid -->
-                    <div class="portfolio-grid three-columns">
-
-                      <figure class="item standard" data-groups='["category_all", "category_project"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/project1_ASM.jpg" alt="NCU soccer game (Assembly)" title="" />
-                          <a href="portfolio-1.html" class="ajax-page-load"></a>
-                        </div>
-
-                        <i class="far fa-file-alt"></i>
-                        <h4 class="name">NCU soccer game (Assembly)</h4>
-                        <span class="category">專案</span>
-                      </figure>
-
-                      <figure class="item standard" data-groups='["category_all", "category_project"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/project2_java.jpg" alt="Ordering system (Java)" title="" />
-                          <a href="portfolio-2.html" class="ajax-page-load"></a>
-                        </div>
-
-                        <i class="far fa-file-alt"></i>
-                        <h4 class="name">Ordering system (Java)</h4>
-                        <span class="category">專案</span>
-                      </figure>
-
-                      <figure class="item standard" data-groups='["category_all", "category_project"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/project3_python.jpg" alt="蝦皮爬蟲&賣家競品分析(Python)" title="" />
-                          <a href="portfolio-3.html" class="ajax-page-load"></a>
-                        </div>
-
-                        <i class="far fa-file-alt"></i>
-                        <h4 class="name">蝦皮爬蟲&賣家競品分析(Python)</h4>
-                        <span class="category">專案</span>
-                      </figure>
-
-                      <figure class="item lbvideo" data-groups='["category_all", "category_IG-videos"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/THSH2020.png" alt="再興中學2020畢業MV" title="" />
-                          <a href="https://www.instagram.com/p/CCL3WtMn6vc/?utm_source=ig_embed&ig_rid=4833dd43-5bba-417c-a3dd-9682aac03ef8"
-                            class="lightbox mfp-iframe" title="再興中學2020畢業MV"></a>
-                        </div>
-
-                        <i class="fas fa-video"></i>
-                        <h4 class="name">再興中學2020畢業MV</h4>
-                        <span class="category">IG影片</span>
-                      </figure>
-
-                      <figure class="item lbvideo" data-groups='["category_all", "category_youtube-videos"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/THSH2020_love.png" alt="畢業典禮 高三愛班進場影片" title="" />
-                          <a href="https://www.youtube.com/embed/VQvxd4mFkR8" class="lightbox mfp-iframe"
-                            title="畢業典禮 高三愛班進場影片"></a>
-                        </div>
-
-                        <i class="fas fa-video"></i>
-                        <h4 class="name">畢業典禮 高三愛班進場影片</h4>
-                        <span class="category">YouTube影片</span>
-                      </figure>
-
-                      <figure class="item lbvideo" data-groups='["category_all", "category_youtube-videos"]'>
-                        <div class="portfolio-item-img">
-                          <img src="img/portfolio/THSH2020_teacher.jpg" alt="2020高三愛班謝師宴影片" title="" />
-                          <a href="https://www.youtube.com/embed/WAjTvYZWGW0" class="lightbox mfp-iframe"
-                            title="2020高三愛班謝師宴影片"></a>
-                        </div>
-
-                        <i class="fas fa-video"></i>
-                        <h4 class="name">2020高三愛班謝師宴影片</h4>
-                        <span class="category">YouTube影片</span>
-                      </figure>
-
-                    </div>
-                  </div>
-                  <!-- End of Portfolio Content -->
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- End of Portfolio Subpage -->
+          <!-- portfolio Subpage -->
+          <?php include_once 'work_list.php'; ?>
+          <!-- End of portfolio Subpage -->
 
           <!-- Blog Subpage -->
-          <section data-id="blog" class="animated-section">
-            <div class="page-title">
-              <h2>部落格</h2>
-            </div>
-
-            <div class="section-content">
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="blog-masonry two-columns clearfix">
-
-                    <!-- Blog Post 1 -->
-                    <div class="item post-1">
-                      <div class="blog-card">
-                        <div class="media-block">
-                          <div class="category">
-                            <a href="#">頒獎</a>
-                          </div>
-                          <a href="blog-post-1.html">
-                            <img src="img/blog/award1.jpg" class="size-blog-masonry-image-two-c" alt="榮獲管理學院-院長獎"
-                              title="" />
-                            <div class="mask"></div>
-                          </a>
-                        </div>
-                        <div class="post-info">
-                          <div class="post-date">December 28, 2021</div>
-                          <a href="blog-post-1.html">
-                            <h4 class="blog-item-title">榮獲管理學院-院長獎</h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Blog Post 1 -->
-
-                    <!-- Blog Post 2 -->
-                    <div class="item post-2">
-                      <div class="blog-card">
-                        <div class="media-block">
-                          <div class="category">
-                            <a href="#">活動</a>
-                          </div>
-                          <a href="blog-post-2.html">
-                            <img src="img/blog/MIS_club1.jpg" class="size-blog-masonry-image-two-c" alt="系學會-新聞部" title="" />
-                            <div class="mask"></div>
-                          </a>
-                        </div>
-                        <div class="post-info">
-                          <div class="post-date">October 1, 2020 - September 1, 2021</div>
-                          <a href="blog-post-2.html">
-                            <h4 class="blog-item-title">系學會-新聞部</h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Blog Post 2 -->
-
-                    <!-- Blog Post 3 -->
-                    <div class="item post-1">
-                      <div class="blog-card">
-                        <div class="media-block">
-                          <div class="category">
-                            <a href="#">活動</a>
-                          </div>
-                          <a href="blog-post-3.html">
-                            <img src="img/blog/ncu_coding_club1.png" class="size-blog-masonry-image-two-c"
-                              alt="中央程式設計研究社" title="" />
-                            <div class="mask"></div>
-                          </a>
-                        </div>
-                        <div class="post-info">
-                          <div class="post-date">Febuary 2, 2021 - now</div>
-                          <a href="blog-post-3.html">
-                            <h4 class="blog-item-title">中央程式設計研究社</h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Blog Post 3 -->
-
-                    <!-- Blog Post 4 -->
-                    <div class="item post-2">
-                      <div class="blog-card">
-                        <div class="media-block">
-                          <div class="category">
-                            <a href="#" title="View all posts in E-Commerce">活動</a>
-                          </div>
-                          <a href="blog-post-4.html">
-                            <img src="img/blog/Camping1.JPG" class="size-blog-masonry-image-two-c" alt="迎新宿營"
-                              title="" />
-                            <div class="mask"></div>
-                          </a>
-                        </div>
-                        <div class="post-info">
-                          <div class="post-date">September 26, 2020</div>
-                          <a href="blog-post-4.html">
-                            <h4 class="blog-item-title">迎新宿營</h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of Blog Post 4 -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          </section>
+          <?php include_once 'blog_list.php'; ?>
           <!-- End of Blog Subpage -->
 
           <!-- Contact Subpage -->
@@ -902,8 +602,7 @@
                 <!-- Contact Form -->
                 <div class="col-xs-12 col-sm-8">
                   <!-- <div id="map" class="map"></div> -->
-                  <iframe class="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9400044799204!2d121.19311011508908!3d24.968155784003258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823c1ec904dcb%3A0xcdc129d4455ce456!2z5ZyL56uL5Lit5aSu5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1643112776396!5m2!1szh-TW!2stw">
+                  <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.9400044799204!2d121.19311011508908!3d24.968155784003258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823c1ec904dcb%3A0xcdc129d4455ce456!2z5ZyL56uL5Lit5aSu5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1643112776396!5m2!1szh-TW!2stw">
                   </iframe>
                   <div class="block-title">
                     <h3>想要寫信 <span>給我嗎?</span></h3>
@@ -917,24 +616,21 @@
                       <div class="fields clearfix">
                         <div class="left-column">
                           <div class="form-group form-group-with-icon">
-                            <input id="form_name" type="text" name="name" class="form-control" placeholder=""
-                              required="required" data-error="姓名不可空白">
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="姓名不可空白">
                             <label>全名</label>
                             <div class="form-control-border"></div>
                             <div class="help-block with-errors"></div>
                           </div>
 
                           <div class="form-group form-group-with-icon">
-                            <input id="form_email" type="email" name="email" class="form-control" placeholder=""
-                              required="required" data-error="必須輸入有效的email">
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="必須輸入有效的email">
                             <label>Email地址</label>
                             <div class="form-control-border"></div>
                             <div class="help-block with-errors"></div>
                           </div>
 
                           <div class="form-group form-group-with-icon">
-                            <input id="form_subject" type="text" name="subject" class="form-control" placeholder=""
-                              required="required" data-error="主旨不可為空白">
+                            <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="主旨不可為空白">
                             <label>主旨</label>
                             <div class="form-control-border"></div>
                             <div class="help-block with-errors"></div>
@@ -942,8 +638,7 @@
                         </div>
                         <div class="right-column">
                           <div class="form-group form-group-with-icon">
-                            <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7"
-                              required="required" data-error="請輸入訊息內文"></textarea>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="請輸入訊息內文"></textarea>
                             <label>訊息內容</label>
                             <div class="form-control-border"></div>
                             <div class="help-block with-errors"></div>
@@ -951,8 +646,7 @@
                         </div>
                       </div>
 
-                      <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"
-                        data-theme="dark"></div>
+                      <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
 
                       <input type="submit" class="button btn-send" value="確認送出">
                     </div>

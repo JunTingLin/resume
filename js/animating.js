@@ -144,7 +144,7 @@ var PageTransitions = (function ($, options) {
 
         var href = $('.ajax-page-load').each(function(){
             href = $(this).attr('href');
-            if(location.hash == location.hash.split('/')[0] + '/' + href.substr(0,href.length-5)){
+            if(location.hash == location.hash.split('/')[0] + '/' + href.substr(0,href.length-4)){
                 var toLoad =  $(this).attr('href');
                 showContent();
                 ajaxLoadedContent.load(toLoad);
@@ -159,7 +159,7 @@ var PageTransitions = (function ($, options) {
                 location.hash = location.hash.split('/')[0];
             })
             .on("click",".ajax-page-load", function () { // Show Ajax Loaded Page
-                var hash = location.hash.split('/')[0] + '/' + $(this).attr('href').substr(0,$(this).attr('href').length-5);
+                var hash = location.hash.split('/')[0] + '/' + $(this).attr('href').substr(0,$(this).attr('href').length-4);
                 location.hash = hash;
                 showContent();
 
