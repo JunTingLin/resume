@@ -1779,6 +1779,22 @@ textarea.form-control, textarea.form-control:focus {
 }
 /* --- End of Blog --- */
 
+/* --- Login Page --- */
+
+#login_title{
+  margin-bottom: 40px;
+  font-size: 42px;
+}
+.login label{
+  font-size: 23px;
+  position: initial;
+}
+.login input{
+  margin-top: 4px;
+  border-radius: 80px;
+}
+
+/* --- End of Login --- */
 
 
 /* --- Project Portfolio Page --- */

@@ -60,7 +60,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
           <!-- End of Home Subpage -->
@@ -84,6 +83,8 @@
           <!-- Contact Subpage -->
           <?php include_once 'contact.php'; ?>
           <!-- End of Contact Subpage -->
+
+
         </div>
       </div>
 

@@ -312,7 +312,36 @@
         //     address: "桃園市中壢區中大路國立中央大學", // Your Address. Change it
         // });
 
+        //當表單 sumbit 出去的時候
+        $("form.login").on("submit", function() {
+            //使用 ajax 送出 帳密給 verify_user.php
+            $.ajax({
+                type: "POST",
+                url: "php/verify_user.php",
+                data: {
+                    un: $("#username").val(), //使用者帳號
+                    pw: $("#password").val() //使用者密碼
+                },
+                dataType: 'html' //設定該網頁回應的會是 html 格式
+            }).done(function(data) {
+                //成功的時候
+                console.log(data);
+                if (data == "yes") {
+                    //註冊新增成功，轉跳到登入頁面。
+                    window.location.href = "backend/index.php"; //因為目前的 login.php 跟後端的 index.php 首頁在同一資料夾，所以直接叫他就好
+                } else {
+                    alert("登入失敗，請確認帳號密碼");
+                }
 
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                //失敗的時候
+                alert("有錯誤產生，請看 console log");
+                console.log(jqXHR.responseText);
+            });
+            //回傳 false 為了要阻止 from 繼續送出去。由上方ajax處理即可
+            return false;
+        });
+        
         
     });
 

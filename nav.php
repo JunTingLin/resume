@@ -1,7 +1,7 @@
 <?php
-    //判斷網址假如含有index.php，網址列就不需要補上index.php
-    $str =  strpos($_SERVER['PHP_SELF'], "index.php")!=false ? "" : "index.php";
-    // echo $str;
+//判斷網址假如含有index.php，網址列就不需要補上index.php
+$str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
+// echo $str;
 
 ?>
 <header id="site_header" class="header mobile-menu-hide">
@@ -16,7 +16,7 @@
     </div>
 
     <ul class="main-menu">
-        <li class="addColor">
+        <li>
             <a href="<?php echo $str ?>#home" class="nav-anim">
                 <span class="menu-icon lnr lnr-home"></span>
                 <span class="link-text">首頁</span>
@@ -65,15 +65,20 @@
     <div class="header-buttons">
         <a href="doc/CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
     </div>
+    <div class="header-buttons">
+        <a href="login.php"  class="btn btn-primary"><span class="menu-icon lnr lnr-lock"></span>登入</a>
+    </div>
+    
+    
 
-    <div class="copyrights">© 2020 JungTing All rights reserved.</div>
+    <div class="copyrights">© <?php echo date("Y") ?> JungTing All rights reserved.</div>
 
     <!-- Mobile Navigation -->
     <div class="menu-toggle">
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <!-- End Mobile Navigation -->
-      
+    </div>
+    <!-- End Mobile Navigation -->
+
 </header>

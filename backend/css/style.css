@@ -1,0 +1,17 @@
+div.content {
+	min-height: 400px;
+}
+
+div.image img{
+	width: 300px;
+}
+
+div.video video{
+	width: 300px;
+}
+table th{
+	color: white;
+	background-color: black;
+	
+}
+
