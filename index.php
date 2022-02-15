@@ -25,6 +25,13 @@
       <!-- 左側導覽列 -->
       <?php include_once 'nav.php'; ?>
 
+      <!-- Mobile Navigation -->
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- End Mobile Navigation -->
 
       <!-- Arrows Nav -->
       <div class="lmpixels-arrows-nav">

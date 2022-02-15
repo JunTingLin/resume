@@ -369,3 +369,62 @@ function verify_user($username, $password)
   //回傳結果
   return $result;
 }
+
+/**
+ * 新增作品
+ */
+function add_work($title, $category, $intro, $team, $teacher, $website, $technology, $image_path1, $image_path2, $image_path3, $image_path4, $image_path5)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+	
+	//上傳時間
+	$upload_date = date("Y-m-d");
+
+
+  //處理圖片路徑
+	$image_path_value1 = "'{$image_path1}'";
+	if($image_path1 == '') $image_path_value1 = 'NULL';
+
+  $image_path_value2 = "'{$image_path2}'";
+	if($image_path2 == '') $image_path_value2 = 'NULL';
+
+  $image_path_value3 = "'{$image_path3}'";
+	if($image_path3 == '') $image_path_value3 = 'NULL';
+
+  $image_path_value4 = "'{$image_path4}'";
+	if($image_path4 == '') $image_path_value4 = 'NULL';
+
+  $image_path_value5 = "'{$image_path5}'";
+	if($image_path5 == '') $image_path_value5 = 'NULL';
+
+
+
+	//新增語法
+  $sql = "INSERT INTO `works` (`title`, `category`, `intro`, `team`, `teacher`, `website`, `technology`,`cover`, `pic1`, `pic2`, `pic3`, `pic4`, `upload_date`)
+  				VALUE ('{$title}', '{$category}', '{$intro}', '{$team}', '{$teacher}', '{$website}',  '{$technology}', '{$image_path1}', '{$image_path2}', '{$image_path3}', '{$image_path4}', '{$image_path5}', '{$upload_date}');";
+
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query)
+  {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if(mysqli_affected_rows($_SESSION['link']) == 1)
+    {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  }
+  else
+  {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}

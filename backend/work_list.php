@@ -45,17 +45,17 @@ $works = get_works();
         </div>
         <div class="col-xs-12">
           <!-- 資料列表 -->
-          <table class="table table-hover" id="myTable">
+          <table class="table table-hover table-responsive">
             <caption>works talbe</caption>
             <thead>
               <tr>
                 <th>標題</th>
                 <th>類別</th>
                 <th>簡介</th>
+                <th>組員</th>
                 <th>指導老師</th>
                 <th>網站</th>
                 <th>技術</th>
-                <th>網站</th>
                 <th>封面圖片</th>
                 <th>內部圖片輪播1/4</th>
                 <th>內部圖片輪播2/4</th>

@@ -15,3 +15,11 @@ table th{
 	
 }
 
+/* https://www.ucamc.com/e-learning/css/420-table-rwd */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}

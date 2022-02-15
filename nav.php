@@ -73,12 +73,6 @@ $str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
 
     <div class="copyrights">© <?php echo date("Y") ?> JungTing All rights reserved.</div>
 
-    <!-- Mobile Navigation -->
-    <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- End Mobile Navigation -->
+    
 
 </header>
