@@ -38,7 +38,7 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
       <div class="row">
         <!-- 在 xs 尺寸，佔12格，可參考 http://getbootstrap.com/css/#grid 說明-->
         <div class="col-xs-12">
-          <form id="add_article_form">
+          <form id="add_work_form">
 
             <div class="form-group">
               <label for="title">標題 </label>
@@ -231,7 +231,7 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
       <?php endfor ?>
 
       //表單送出
-      $("#add_article_form").on("submit", function() {
+      $("#add_work_form").on("submit", function() {
         //加入loading icon
         $("div.loading").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 
@@ -244,7 +244,7 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
           //使用 ajax 送出 
           $.ajax({
             type: "POST",
-            url: "../php/add_work.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_article.php
+            url: "../php/add_work.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_work.php
             data: {
               title: $("#title").val(), //標題
               category: $("input[name='category']:checked").val(), //種類

@@ -291,7 +291,7 @@ if (is_null($data)) {
 
 						//成功的時候
 						if (data == "yes") {
-							//註冊新增成功，轉跳到登入頁面。
+							//註冊更新成功，轉跳到登入頁面。
 							alert("更新成功，點擊確認回列表");
 							window.location.href = "work_list.php";
 						} else {

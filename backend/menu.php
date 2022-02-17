@@ -19,6 +19,12 @@ switch ($current_file) {
 		//為作品列表或完整作品頁
 		$index = 2;
 		break;
+	case 'resume_list':
+	case 'resume_edit':
+	case 'resume_add':
+		//為簡歷列表或完整作品頁
+		$index = 3;
+		break;
 	default:
 		//預設索引為 0
 		$index = 0;
@@ -40,7 +46,8 @@ switch ($current_file) {
 				<li role="presentation" <?php echo ($index == 0) ? 'class="active"' : ''; ?>><a href="./">後台首頁</a></li>
 				<li role="presentation" <?php echo ($index == 1) ? 'class="active"' : ''; ?>><a href="blog_list.php">部落格管理</a></li>
 				<li role="presentation" <?php echo ($index == 2) ? 'class="active"' : ''; ?>><a href="work_list.php">作品管理</a></li>
-				
+				<li role="presentation" <?php echo ($index == 3) ? 'class="active"' : ''; ?>><a href="resume_list.php">簡歷管理</a></li>
+
 				<li role="presentation"><a href="../php/logout.php">登出</a></li>
 			</ul>
 		</div>

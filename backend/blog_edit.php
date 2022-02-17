@@ -46,7 +46,7 @@ if (is_null($data)) {
       <div class="row">
         <!-- 在 xs 尺寸，佔12格，可參考 http://getbootstrap.com/css/#grid 說明-->
         <div class="col-xs-12">
-          <form id="add_blog_form">
+          <form id="edit_blog_form">
             <input type="hidden" id="id" value="<?php echo $data['id']; ?>">
             <div class="form-group">
               <label for="title">標題 </label>
@@ -220,7 +220,7 @@ if (is_null($data)) {
       <?php endfor ?>
 
       //表單送出
-      $("#add_blog_form").on("submit", function() {
+      $("#edit_blog_form").on("submit", function() {
         //加入loading icon
         $("div.loading").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 
@@ -233,7 +233,7 @@ if (is_null($data)) {
           //使用 ajax 送出 
           $.ajax({
             type: "POST",
-            url: "../php/add_blog.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_blog.php
+            url: "../php/update_blog.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 update_blog.php
             data: {
               id: $("#id").val(), //id
               title: $("#title").val(), //標題
@@ -253,8 +253,8 @@ if (is_null($data)) {
 
             //成功的時候
             if (data == "yes") {
-              //新增成功，轉跳到登入頁面。
-              alert("新增成功，點擊確認回列表");
+              //更新成功，轉跳到登入頁面。
+              alert("更新成功，點擊確認回列表");
               window.location.href = "blog_list.php";
             } else {
               alert("更新錯誤");
