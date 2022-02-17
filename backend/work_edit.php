@@ -10,7 +10,7 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
 	header("Location: login.php");
 }
 
-//取得文章資料，從網址上的 i 取得文章id
+//取得作品資料，從網址上的 i 取得文章id
 $data = get_work($_GET['i']);
 if (is_null($data)) {
 	//如果文章是null就轉回列表頁
@@ -87,14 +87,14 @@ if (is_null($data)) {
 						</div>
 
 						<div class="form-group">
-							<label for="technology">技術 </label>
+							<label for="technology">技術(請用逗號隔開) </label>
 							<input type="input" class="form-control" id="technology" value="<?php echo $data['technology']; ?>"></input>
 						</div>
 
 						<div class="form-group">
 							<label for="image_path1">封面圖片</label>
 							<input type="file" name="image_path1" accept="image/gif, image/jpeg, image/png">
-							<input type="hidden" id="image_path1" value="">
+							<input type="hidden" id="image_path1" value="<?php echo $data['cover'] ?>">
 							<div class="image" id="image1">
 								<?php if ($data['cover'] && file_exists("../" . $data['cover'])) : ?>
 									<img src='<?php echo "../" . $data['cover']; ?>'>
@@ -106,7 +106,7 @@ if (is_null($data)) {
 						<div class="form-group">
 							<label for="image_path2">內部圖片輪播1/4</label>
 							<input type="file" name="image_path2" accept="image/gif, image/jpeg, image/png">
-							<input type="hidden" id="image_path2" value="">
+							<input type="hidden" id="image_path2" value="<?php echo $data['pic1'] ?>">
 							<div class="image" id="image2">
 								<?php if ($data['pic1'] && file_exists("../" . $data['pic1'])) : ?>
 									<img src='<?php echo "../" . $data['pic1']; ?>'>
@@ -118,7 +118,7 @@ if (is_null($data)) {
 						<div class="form-group">
 							<label for="image_path3">內部圖片輪播2/4</label>
 							<input type="file" name="image_path3" accept="image/gif, image/jpeg, image/png">
-							<input type="hidden" id="image_path3" value="">
+							<input type="hidden" id="image_path3" value="<?php echo $data['pic2'] ?>">
 							<div class="image" id="image3">
 								<?php if ($data['pic2'] && file_exists("../" . $data['pic2'])) : ?>
 									<img src='<?php echo "../" . $data['pic2']; ?>'>
@@ -130,7 +130,7 @@ if (is_null($data)) {
 						<div class="form-group">
 							<label for="image_path4">內部圖片輪播3/4</label>
 							<input type="file" name="image_path4" accept="image/gif, image/jpeg, image/png">
-							<input type="hidden" id="image_path4" value="">
+							<input type="hidden" id="image_path4" value="<?php echo $data['pic3'] ?>">
 							<div class="image" id="image4">
 								<?php if ($data['pic3'] && file_exists("../" . $data['pic3'])) : ?>
 									<img src='<?php echo "../" . $data['pic3']; ?>'>
@@ -142,7 +142,7 @@ if (is_null($data)) {
 						<div class="form-group">
 							<label for="image_path5">內部圖片輪播4/4</label>
 							<input type="file" name="image_path5" accept="image/gif, image/jpeg, image/png">
-							<input type="hidden" id="image_path5" value="">
+							<input type="hidden" id="image_path5" value="<?php echo $data['pic4'] ?>">
 							<div class="image" id="image5">
 								<?php if ($data['pic4'] && file_exists("../" . $data['pic4'])) : ?>
 									<img src='<?php echo "../" . $data['pic4']; ?>'>
@@ -172,72 +172,37 @@ if (is_null($data)) {
 			/**
 			 * 圖片上傳
 			 */
-			//上傳圖片的input更動的時候
-			$("input[name='image_path1']").on("change", function() {
-				//產生 FormData 物件
-				var file_data = new FormData(),
-					file_name = $(this)[0].files[0]['name'],
-					save_path = "images/portfolio/";
+			<?php for ($i = 1; $i <= 5; $i++) : ?>
+				//上傳圖片的input更動的時候
+				$("input[name='image_path<?php echo $i ?>']").on("change", function() {
+					//產生 FormData 物件
+					var file_data = new FormData(),
+						file_name = $(this)[0].files[0]['name'],
+						save_path = "img/portfolio/";
 
-				//在圖片區塊，顯示loading
-				$("#image1").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+					//在圖片區塊，顯示loading
+					$("#image<?php echo $i ?>").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 
-				//FormData 新增剛剛選擇的檔案
-				file_data.append("file", $(this)[0].files[0]);
-				file_data.append("save_path", save_path);
-				//透過ajax傳資料
-				$.ajax({
-					type: 'POST',
-					url: '../php/upload_file.php',
-					data: file_data,
-					cache: false, //因為只有上傳檔案，所以不要暫存
-					processData: false, //因為只有上傳檔案，所以不要處理表單資訊
-					contentType: false, //送過去的內容，由 FormData 產生了，所以設定false
-					dataType: 'html'
-				}).done(function(data) {
-					console.log(data);
-					//上傳成功
-					if (data == "yes") {
-						//將檔案插入
-						$("#image1").html("<img src='../" + save_path + file_name + "'>");
-						//給予 #image_path 值，等等存檔時會用
-						$("#image_path1").val(save_path + file_name);
-					} else {
-						//警告回傳的訊息
-						alert(data);
-					}
-
-				}).fail(function(data) {
-					//失敗的時候
-					alert("有錯誤產生，請看 console log");
-					console.log(jqXHR.responseText);
-				});
-			});
-
-
-
-			/**
-			 * 刪除照片
-			 */
-			$("#del_image1").on("click", function() {
-				//如果有圖片路徑，就刪除該檔案
-				if ($("#image_path1").val() != '') {
-					//透過ajax刪除
+					//FormData 新增剛剛選擇的檔案
+					file_data.append("file", $(this)[0].files[0]);
+					file_data.append("save_path", save_path);
+					//透過ajax傳資料
 					$.ajax({
 						type: 'POST',
-						url: '../php/del_file.php',
-						data: {
-							"file": $("#image_path").val()
-						},
+						url: '../php/upload_file.php',
+						data: file_data,
+						cache: false, //因為只有上傳檔案，所以不要暫存
+						processData: false, //因為只有上傳檔案，所以不要處理表單資訊
+						contentType: false, //送過去的內容，由 FormData 產生了，所以設定false
 						dataType: 'html'
 					}).done(function(data) {
 						console.log(data);
 						//上傳成功
 						if (data == "yes") {
-							//將圖片標籤移除，並清空目前設定路徑
-							$("#image1").html("");
+							//將檔案插入
+							$("#image<?php echo $i ?>").html("<img src='../" + save_path + file_name + "'>");
 							//給予 #image_path 值，等等存檔時會用
-							$("#image_path1").val('');
+							$("#image_path<?php echo $i ?>").val(save_path + file_name);
 						} else {
 							//警告回傳的訊息
 							alert(data);
@@ -248,11 +213,48 @@ if (is_null($data)) {
 						alert("有錯誤產生，請看 console log");
 						console.log(jqXHR.responseText);
 					});
-				} else {
-					alert("無檔案可以刪除");
-				}
-			});
+				});
+			<?php endfor ?>
 
+
+			/**
+			 * 刪除照片
+			 */
+			<?php for ($i = 1; $i <= 5; $i++) : ?>
+				$("#del_image<?php echo $i ?>").on("click", function() {
+					//如果有圖片路徑，就刪除該檔案
+					if ($("#image_path<?php echo $i ?>").val() != '') {
+						//透過ajax刪除
+						$.ajax({
+							type: 'POST',
+							url: '../php/del_file.php',
+							data: {
+								"file": $("#image_path<?php echo $i ?>").val()
+							},
+							dataType: 'html'
+						}).done(function(data) {
+							console.log(data);
+							//上傳成功
+							if (data == "yes") {
+								//將圖片標籤移除，並清空目前設定路徑
+								$("#image<?php echo $i ?>").html("");
+								//給予 #image_path 值，等等存檔時會用
+								$("#image_path<?php echo $i ?>").val('');
+							} else {
+								//警告回傳的訊息
+								alert(data);
+							}
+
+						}).fail(function(data) {
+							//失敗的時候
+							alert("有錯誤產生，請看 console log");
+							console.log(jqXHR.responseText);
+						});
+					} else {
+						alert("無檔案可以刪除");
+					}
+				});
+			<?php endfor ?>
 
 			//表單送出
 			$("#edit_work_form").on("submit", function() {
@@ -268,13 +270,21 @@ if (is_null($data)) {
 					//使用 ajax 送出 帳密給 verify_user.php
 					$.ajax({
 						type: "POST",
-						url: "../php/update_work.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_article.php
+						url: "../php/update_work.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_work.php
 						data: {
 							id: $("#id").val(), //id
-							intro: $("#intro").val(), //介紹
-							image_path: $("#image_path").val(), //圖片路徑
-							video_path: $("#video_path").val(), //影片路徑
-							publish: $("input[name='publish']:checked").val() //發布狀況
+							title: $("#title").val(), //標題
+							category: $("input[name='category']:checked").val(), //種類
+							intro: $("#intro").val(), //簡介
+							team: $("#team").val(), //組員
+							teacher: $("#teacher").val(), //指導老師
+							website: $("#website").val(), //網頁
+							technology: $("#technology").val(), //技術
+							image_path1: $("#image_path1").val(), //圖片路徑
+							image_path2: $("#image_path2").val(), //圖片路徑
+							image_path3: $("#image_path3").val(), //圖片路徑
+							image_path4: $("#image_path4").val(), //圖片路徑
+							image_path5: $("#image_path5").val(), //圖片路徑
 						},
 						dataType: 'html' //設定該網頁回應的會是 html 格式
 					}).done(function(data) {

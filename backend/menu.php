@@ -38,7 +38,7 @@ switch ($current_file) {
 			<ul class="nav nav-pills">
 				<li role="presentation"><a href="../">回前台首頁</a></li>
 				<li role="presentation" <?php echo ($index == 0) ? 'class="active"' : ''; ?>><a href="./">後台首頁</a></li>
-				<li role="presentation" <?php echo ($index == 1) ? 'class="active"' : ''; ?>><a href="article_list.php">部落格管理</a></li>
+				<li role="presentation" <?php echo ($index == 1) ? 'class="active"' : ''; ?>><a href="blog_list.php">部落格管理</a></li>
 				<li role="presentation" <?php echo ($index == 2) ? 'class="active"' : ''; ?>><a href="work_list.php">作品管理</a></li>
 				
 				<li role="presentation"><a href="../php/logout.php">登出</a></li>

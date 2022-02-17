@@ -428,3 +428,242 @@ function add_work($title, $category, $intro, $team, $teacher, $website, $technol
   //回傳結果
   return $result;
 }
+
+/**
+ * 刪除作品
+ */
+function del_work($id)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+	//先取得該作品資訊，作為之後要刪除檔案用，此用本檔案中的 get_work 方法來取得作品資訊。
+	$work = get_work($id);
+
+	if($work)
+	{
+		//有作品才進行刪除工作
+		//若有圖檔資料，以及圖檔有存在，就刪除
+		if($work['cover'] && file_exists("../".$work['cover']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$work['cover']);
+		}
+    if($work['pic1'] && file_exists("../".$work['pic1']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$work['pic1']);
+		}
+    if($work['pic2'] && file_exists("../".$work['pic2']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$work['pic2']);
+		}
+    if($work['pic3'] && file_exists("../".$work['pic3']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$work['pic3']);
+		}
+    if($work['pic4'] && file_exists("../".$work['pic4']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$work['pic4']);
+		}
+
+	
+
+		//刪除作品語法
+	  $sql = "DELETE FROM `works` WHERE `id` = {$id};";
+
+	  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+	  $query = mysqli_query($_SESSION['link'], $sql);
+
+	  //如果請求成功
+	  if ($query)
+	  {
+	    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+	    if(mysqli_affected_rows($_SESSION['link']) == 1)
+	    {
+	      //取得的量大於0代表有資料
+	      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+	      $result = true;
+	    }
+	  }
+	  else
+	  {
+	    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+	  }
+
+
+	}
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 更新作品
+ */
+function update_work($id, $title, $category, $intro, $team, $teacher, $website, $technology, $image_path1, $image_path2, $image_path3, $image_path4, $image_path5)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+
+
+	//更新語法
+  $sql = "UPDATE `works` SET `title` = '{$title}', `category` = '{$category}', `intro` = '{$intro}', `team` = '{$team}', `teacher` = '{$teacher}', `website` = '{$website}', `technology` = '{$technology}', `cover` = '{$image_path1}', `pic1` = '{$image_path2}', `pic2` = '{$image_path3}', `pic3` = '{$image_path4}', `pic4` = '{$image_path5}'
+  				  WHERE `id` = {$id};";
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query)
+  {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if(mysqli_affected_rows($_SESSION['link']) == 1)
+    {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  }
+  else
+  {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 新增部落格
+ */
+function add_blog($title, $category, $intro, $people, $tag, $image_path1, $image_path2, $date_start, $date_end)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+	//新增語法
+  $sql = "INSERT INTO `blogs` (`title`, `category`, `intro`, `people`, `tag`, `cover`, `pic`,`date_start`, `date_end`)
+  				VALUE ('{$title}', '{$category}', '{$intro}', '{$people}', '{$tag}', '{$image_path1}',  '{$image_path2}', '{$date_start}', '{$date_end}');";
+
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query)
+  {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if(mysqli_affected_rows($_SESSION['link']) == 1)
+    {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  }
+  else
+  {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 刪除部落格
+ */
+function del_blog($id)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+	//先取得該作品資訊，作為之後要刪除檔案用，此用本檔案中的 get_work 方法來取得作品資訊。
+	$blog = get_blog($id);
+
+	if($blog)
+	{
+		//有作品才進行刪除工作
+		//若有圖檔資料，以及圖檔有存在，就刪除
+		if($blog['cover'] && file_exists("../".$blog['cover']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$blog['cover']);
+		}
+    if($blog['pic'] && file_exists("../".$blog['pic']))
+		{
+			//unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+			unlink("../".$blog['pic']);
+		}
+    
+
+	
+
+		//刪除作品語法
+	  $sql = "DELETE FROM `blogs` WHERE `id` = {$id};";
+
+	  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+	  $query = mysqli_query($_SESSION['link'], $sql);
+
+	  //如果請求成功
+	  if ($query)
+	  {
+	    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+	    if(mysqli_affected_rows($_SESSION['link']) == 1)
+	    {
+	      //取得的量大於0代表有資料
+	      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+	      $result = true;
+	    }
+	  }
+	  else
+	  {
+	    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+	  }
+
+
+	}
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 更新部落格
+ */
+function update_blog($id, $title, $category, $intro, $people, $tag, $image_path1, $image_path2, $date_start, $date_end)
+{
+	//宣告要回傳的結果
+  $result = null;
+
+
+	//更新語法
+  $sql = "UPDATE `works` SET `title` = '{$title}', `category` = '{$category}', `intro` = '{$intro}', `people` = '{$people}', `tag` = '{$tag}', `cover` = '{$image_path1}', `pic` = '{$image_path2}', `date_start` = '{$date_start}', `date_end` = '{$date_end}'
+  				  WHERE `id` = {$id};";
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query)
+  {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if(mysqli_affected_rows($_SESSION['link']) == 1)
+    {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  }
+  else
+  {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
