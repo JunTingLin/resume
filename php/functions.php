@@ -213,7 +213,38 @@ function get_certificates()
   //回傳結果
   return $datas;
 }
+/**
+ * 取得單篇證書
+ */
+function get_certificate($id)
+{
+  //宣告要回傳的結果
+  $result = null;
 
+  //將查詢語法當成字串，記錄在$sql變數中
+  $sql = "SELECT * FROM `certificates` WHERE `id` = {$id};";
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query) {
+    //使用 mysqli_num_rows 方法，判別執行的語法，其取得的資料量，是否有一筆資料
+    if (mysqli_num_rows($query) == 1) {
+      //取得的量大於0代表有資料
+      //while迴圈會根據查詢筆數，決定跑的次數
+      //mysqli_fetch_assoc 方法取得 一筆值
+      $result = mysqli_fetch_assoc($query);
+    }
+
+    //釋放資料庫查詢到的記憶體
+    mysqli_free_result($query);
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+  //回傳結果
+  return $result;
+}
 
 /**
  * 取得所有作品
@@ -833,6 +864,181 @@ function update_skill($id, $category, $name, $percent)
     }
   } else {
     echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 新增知識
+ */
+function add_knowledge($name)
+{
+  //宣告要回傳的結果
+  $result = null;
+
+  //新增語法
+  $sql = "INSERT INTO `knowledges` (`name`)
+  				VALUE ('{$name}');";
+
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query) {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if (mysqli_affected_rows($_SESSION['link']) == 1) {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+/**
+ * 刪除知識
+ */
+function del_knowledge($id)
+{
+  //宣告要回傳的結果
+  $result = null;
+
+  //刪除作品語法
+  $sql = "DELETE FROM `knowledges` WHERE `id` = {$id};";
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query) {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if (mysqli_affected_rows($_SESSION['link']) == 1) {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+
+
+/**
+ * 新增證書
+ */
+function add_certificate($name, $serial_number, $score, $image_path, $pdf_path, $date)
+{
+  //宣告要回傳的結果
+  $result = null;
+
+  //新增語法
+  $sql = "INSERT INTO `certificates` (`name`, `serial_number`, `score`, `cover`, `path`,`date`)
+  				VALUE ('{$name}', '{$serial_number}', '{$score}', '{$image_path}', '{$pdf_path}', '{$date}');";
+
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query) {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if (mysqli_affected_rows($_SESSION['link']) == 1) {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    }
+  } else {
+    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+  }
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 刪除證書
+ */
+function del_certificate($id)
+{
+  //宣告要回傳的結果
+  $result = null;
+
+  //先取得該作品資訊，作為之後要刪除檔案用，此用本檔案中的 get_work 方法來取得作品資訊。
+  $certificate = get_certificate($id);
+
+  if ($certificate) {
+    //有作品才進行刪除工作
+    //若有圖檔資料，以及圖檔有存在，就刪除
+    if ($certificate['cover'] && file_exists("../" . $certificate['cover'])) {
+      //unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+      unlink("../" . $certificate['cover']);
+    }
+    if ($certificate['path'] && file_exists("../" . $certificate['path'])) {
+      //unlink 為刪除檔案的方法，把上一層找到 files/ 裡面的檔案，做刪除
+      unlink("../" . $certificate['path']);
+    }
+
+
+
+
+    //刪除作品語法
+    $sql = "DELETE FROM `certificates` WHERE `id` = {$id};";
+
+    //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+    $query = mysqli_query($_SESSION['link'], $sql);
+
+    //如果請求成功
+    if ($query) {
+      //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+      if (mysqli_affected_rows($_SESSION['link']) == 1) {
+        //取得的量大於0代表有資料
+        //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+        $result = true;
+      }
+    } else {
+      echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+    }
+  }
+
+  //回傳結果
+  return $result;
+}
+
+/**
+ * 更新證書
+ */
+function update_certificate($id, $name, $serial_number, $score, $image_path, $pdf_path, $date)
+{
+  //宣告要回傳的結果
+  $result = null;
+
+
+  //更新語法
+  $sql = "UPDATE `certificates` SET `name` = '{$name}', `serial_number` = '{$serial_number}', `score` = '{$score}', `cover` = '{$image_path}', `path` = '{$pdf_path}', `date` = '{$date}'
+  				  WHERE `id` = {$id};";
+
+  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
+  $query = mysqli_query($_SESSION['link'], $sql);
+
+  //如果請求成功
+  if ($query) {
+    //使用 mysqli_affected_rows 判別異動的資料有幾筆，基本上只有新增一筆，所以判別是否 == 1
+    if (mysqli_affected_rows($_SESSION['link']) == 1) {
+      //取得的量大於0代表有資料
+      //回傳的 $result 就給 true 代表有該帳號，不可以被新增
+      $result = true;
+    } else {
+      echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+    }
   }
 
   //回傳結果

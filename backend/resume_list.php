@@ -137,7 +137,6 @@ $certificates = get_certificates()
                   <tr>
                     <td><?php echo $knowledge['name']; ?></td>
                     <td>
-                      <a href='knowledge_edit.php?i=<?php echo $knowledge['id']; ?>' class="btn btn-success">編輯</a>
                       <a href='javascript:void(0);' class='btn btn-danger del_knowledge' data-id="<?php echo $knowledge['id']; ?>">刪除</a>
                     </td>
                   </tr>

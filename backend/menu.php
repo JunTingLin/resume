@@ -20,8 +20,14 @@ switch ($current_file) {
 		$index = 2;
 		break;
 	case 'resume_list':
-	case 'resume_edit':
-	case 'resume_add':
+	case 'experience_edit':
+	case 'experience_add':
+	case 'skill_edit':
+	case 'skill_add':
+	case 'knowledge_edit':
+	case 'knowledge_add':
+	case 'certificate_edit':
+	case 'certificate_add':
 		//為簡歷列表或完整作品頁
 		$index = 3;
 		break;
