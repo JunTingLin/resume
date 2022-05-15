@@ -71,7 +71,10 @@ $str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
     
     
 
-    <div class="copyrights">© <?php echo date("Y") ?> JungTing All rights reserved.</div>
+    <div class="copyrights">
+        Powered by <a href="https://themeforest.net/" target="_blank">BreezyCV</a><br>
+        © <?php echo date("Y") ?> JungTing All rights reserved.
+    </div>
 
     
 
