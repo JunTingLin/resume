@@ -398,14 +398,14 @@ function verify_user($username, $password)
   //先把密碼用md5加密
   $password = md5($password);
   //將查詢語法當成字串，記錄在$sql變數中
-  $sql = "SELECT * FROM `user` WHERE `username` = '{' or 1 -- // }' AND `password` = '{$password}'";
+  $sql = "SELECT * FROM `user` WHERE `username` = '{$username}' AND `password` = '{$password}'";
 
   //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
   $query = mysqli_query($_SESSION['link'], $sql);
 
   //如果請求成功
   if ($query) {
-    //使用 mysqli_num_rows 回傳 $query 請求的結果數量有幾筆，為一筆代表找到會員且密碼正確。
+    //使用 mysqli_num_rows 回傳 $query 請求的結果數量有幾筆
     if (mysqli_num_rows($query)) {
       //取得使用者資料
       $user = mysqli_fetch_assoc($query);
