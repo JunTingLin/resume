@@ -327,7 +327,7 @@
                 //成功的時候
                 console.log(data);
                 if (data == "yes") {
-                    //註冊新增成功，轉跳到登入頁面。
+                    //登入成功，轉跳到後台首頁。
                     window.location.href = "backend/index.php"; //因為目前的 login.php 跟後端的 index.php 首頁在同一資料夾，所以直接叫他就好
                 } else {
                     alert("登入失敗，請確認帳號密碼");
@@ -338,7 +338,7 @@
                 alert("有錯誤產生，請看 console log");
                 console.log(jqXHR.responseText);
             });
-            //回傳 false 為了要阻止 from 繼續送出去。由上方ajax處理即可
+            //回傳 false 為了要阻止 form 繼續送出去。由上方ajax處理即可
             return false;
         });
         

@@ -409,7 +409,7 @@ function verify_user($username, $password)
       //取得使用者資料
       $user = mysqli_fetch_assoc($query);
 
-      //在session李設定 is_login 並給 true 值，代表已經登入
+      //在session裡設定 is_login 並給 true 值，代表已經登入
       $_SESSION['is_login'] = TRUE;
       //紀錄登入者的id，之後若要隨時取得使用者資料時，可以透過 $_SESSION['login_user_id'] 取用
       $_SESSION['login_user_id'] = $user['id'];
