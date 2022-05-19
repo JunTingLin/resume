@@ -397,13 +397,13 @@ function verify_user($username, $password)
   //先把密碼用md5加密
   $password = md5($password);
   //將查詢語法當成字串，記錄在$sql變數中
-  $sql = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?";
+  $sql = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"; // #SQL指令 ?代表參數
 
-  $stmt = $_SESSION['link']->prepare($sql);
-  $stmt->bind_param('ss', $username, $password);
-  $stmt->execute();
-  $res=$stmt->get_result();
-  if ($row = $res->fetch_assoc()) {
+  $stmt = $_SESSION['link']->prepare($sql); // #準備SQL指令
+  $stmt->bind_param('ss', $username, $password);  // #綁定參數
+  $stmt->execute();                            // #執行SQL指令
+  $res=$stmt->get_result();                  // #取得查詢結果
+  if ($row = $res->fetch_assoc()) {        // #判斷是否有資料
     
     //在session裡設定 is_login 並給 true 值，代表已經登入
     $_SESSION['is_login'] = TRUE;
