@@ -293,6 +293,7 @@ function get_work($id)
   //將查詢語法當成字串，記錄在$sql變數中
   $sql = "SELECT * FROM `works` WHERE `id` = {$id};";
 
+
   //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
   $query = mysqli_query($_SESSION['link'], $sql);
 
@@ -397,6 +398,7 @@ function verify_user($username, $password)
   //先把密碼用md5加密
   $password = md5($password);
   //將查詢語法當成字串，記錄在$sql變數中
+
   $sql = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"; // #SQL指令 ?代表參數
 
   $stmt = $_SESSION['link']->prepare($sql); // #準備SQL指令
@@ -412,6 +414,7 @@ function verify_user($username, $password)
 
     //回傳的 $result 就給 true 代表驗證成功
     $result = true;
+
   }
 
   //回傳結果
