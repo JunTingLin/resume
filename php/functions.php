@@ -398,28 +398,23 @@ function verify_user($username, $password)
   //先把密碼用md5加密
   $password = md5($password);
   //將查詢語法當成字串，記錄在$sql變數中
-  $sql = "SELECT * FROM `user` WHERE `username` = '{$username}' AND `password` = '{$password}'";
 
-  //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
-  $query = mysqli_query($_SESSION['link'], $sql);
+  $sql = "SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"; // #SQL指令 ?代表參數
 
-  //如果請求成功
-  if ($query) {
-    //使用 mysqli_num_rows 回傳 $query 請求的結果數量有幾筆
-    if (mysqli_num_rows($query)) {
-      //取得使用者資料
-      $user = mysqli_fetch_assoc($query);
+  $stmt = $_SESSION['link']->prepare($sql); // #準備SQL指令
+  $stmt->bind_param('ss', $username, $password);  // #綁定參數
+  $stmt->execute();                            // #執行SQL指令
+  $res=$stmt->get_result();                  // #取得查詢結果
+  if ($row = $res->fetch_assoc()) {        // #判斷是否有資料
+    
+    //在session裡設定 is_login 並給 true 值，代表已經登入
+    $_SESSION['is_login'] = TRUE;
+    //紀錄登入者的id，之後若要隨時取得使用者資料時，可以透過 $_SESSION['login_user_id'] 取用
+    $_SESSION['login_user_id'] = $row['id'];
 
-      //在session裡設定 is_login 並給 true 值，代表已經登入
-      $_SESSION['is_login'] = TRUE;
-      //紀錄登入者的id，之後若要隨時取得使用者資料時，可以透過 $_SESSION['login_user_id'] 取用
-      $_SESSION['login_user_id'] = $user['id'];
+    //回傳的 $result 就給 true 代表驗證成功
+    $result = true;
 
-      //回傳的 $result 就給 true 代表驗證成功
-      $result = true;
-    }
-  } else {
-    echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
   }
 
   //回傳結果
