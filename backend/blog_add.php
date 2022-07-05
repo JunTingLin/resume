@@ -66,7 +66,7 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
             </div>
 
             <div class="form-group">
-              <label for="tag">標籤(請用逗號隔開) </label>
+              <label for="tag">標籤(請用頓號隔開) </label>
               <input type="input" class="form-control" id="tag"></input>
             </div>
 

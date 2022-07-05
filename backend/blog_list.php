@@ -41,7 +41,7 @@ $blogs = get_blogs();
       <div class="row">
         <!-- 在 xs 尺寸，佔12格，可參考 http://getbootstrap.com/css/#grid 說明-->
         <div class="col-xs-12">
-          <a href='blog_add.php' class="btn btn-info">新增作品</a>
+          <a href='blog_add.php' class="btn btn-info">新增部落格</a>
         </div>
         <div class="col-xs-12">
           <!-- 資料列表 -->
