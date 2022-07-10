@@ -18,7 +18,7 @@ $datas = get_blogs();
             <div class="col-xs-12 col-sm-12">
                 <div class="blog-masonry two-columns clearfix">
 
-                    <?php foreach ($datas as $row) : ?>
+                    <?php foreach (array_reverse($datas) as $row) : ?>
                         <!-- Blog Post -->
                         <div class="item post-1">
                             <div class="blog-card">
