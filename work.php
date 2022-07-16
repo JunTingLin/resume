@@ -12,24 +12,12 @@ $work = get_work($_GET['i']);
 <html lang="zh-TW" class="no-js">
 
 <head>
-    <?php include_once 'head.php'; ?>
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/animating.js"></script>
-
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
-    <script src='js/perfect-scrollbar.min.js'></script>
-    <script src='js/jquery.shuffle.min.js'></script>
-    <script src='js/masonry.pkgd.min.js'></script>
-    <script src='js/owl.carousel.min.js'></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
-    <script src="js/jquery.googlemap.js"></script>
-    <script src="js/validator.js"></script>
-    <script src="js/main.js"></script>
+    <?php 
+    include_once 'head.php';
+    include_once 'js_quote.php';
+    //work這頁因為有照片幻燈片的關係，故引用於head區塊
+    ?>
+    
 </head>
 
 <body>
@@ -135,7 +123,7 @@ $work = get_work($_GET['i']);
                                     </div>
                                     <ul class="tags">
                                         <!-- php分割字串 -->
-                                        <?php foreach(mb_split("、",$work["technology"]) as $a_tech): ?>
+                                        <?php foreach (mb_split("、", $work["technology"]) as $a_tech) : ?>
                                             <li><a><?php echo $a_tech ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -151,7 +139,7 @@ $work = get_work($_GET['i']);
 
         </div>
     </div>
-
+    
 </body>
 
 

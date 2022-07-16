@@ -18,7 +18,6 @@
 <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 
-<script src="js/modernizr.custom.js"></script>
 
 <!-- ------------------------------------------------------------------------------------- -->
 

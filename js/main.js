@@ -75,8 +75,9 @@
         //   });
         $('#contact_form').on('submit', function (e) {
             if (!e.isDefaultPrevented()) {
-                // var url = "contact_form/contact_form.php";
-                var url = "contact_form/contact_test.php";
+            //插入loading icon
+            $('#contact_form').find('button').append('<i class="fa fa-spinner fa-spin"></i>');
+                var url = "contact_form/contact_form.php";
 
                 $.ajax({
                     type: "POST",
@@ -88,10 +89,12 @@
                         var messageAlert = 'alert-' + data.type;
                         var messageText = data.message;
 
-                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                        var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
                         if (messageAlert && messageText) {
                             $('#contact_form').find('.messages').html(alertBox);
                             $('#contact_form')[0].reset();
+                            //移除loading icon
+                            $('#contact_form').find('button').find('i').remove();
                         }
                     }
                 });

@@ -31,7 +31,8 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 }
             }
 
-            sendEmail($emailText);
+            // sendEmail($emailText);
+            sleep(5);
             $responseArray = array('type' => 'success', 'message' => $okMessage);
         }
         catch (\Exception $e)
@@ -39,16 +40,12 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
             $responseArray = array('type' => 'danger', 'message' => $errorMessage);
         }
 
-        // if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            $encoded = json_encode($responseArray);
+        $encoded = json_encode($responseArray);
 
-            header('Content-Type: application/json');
+        header('Content-Type: application/json');
 
-            echo $encoded;
-        // }
-        // else {
-        //     echo $responseArray['message'];
-        // }
+        echo $encoded;
+
 
     else:
         $errorMessage = '機器人驗證失敗，請重試。';
