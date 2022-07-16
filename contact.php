@@ -92,6 +92,10 @@
                         <button class="button btn-send">
                             確定
                         </button>
+                        <div class="alert alert-success alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Success!</strong> Indicates a successful or positive action.
+                        </div>
                     </div>
                 </form>
             </div>

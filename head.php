@@ -11,6 +11,7 @@
 
 
 <link rel="stylesheet" href="css/reset.css" type="text/css">
+<link rel="stylesheet" href="css/bootstap-alert.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
 <link rel="stylesheet" href="css/animations.css" type="text/css">
 <link rel="stylesheet" href="css/perfect-scrollbar.css" type="text/css">
