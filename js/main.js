@@ -69,9 +69,14 @@
 
         $('#contact_form').validator();
 
+        // $('#contact_form').submit(function() {
+        //     alert($(this).serialize());
+        //     return false;
+        //   });
         $('#contact_form').on('submit', function (e) {
             if (!e.isDefaultPrevented()) {
-                var url = "contact_form/contact_form.php";
+                // var url = "contact_form/contact_form.php";
+                var url = "contact_form/contact_test.php";
 
                 $.ajax({
                     type: "POST",
@@ -79,6 +84,7 @@
                     data: $(this).serialize(),
                     success: function (data)
                     {
+                        console.log(data);
                         var messageAlert = 'alert-' + data.type;
                         var messageText = data.message;
 
@@ -92,6 +98,7 @@
                 return false;
             }
         });
+        
     });
     // /Contact form validator
 
