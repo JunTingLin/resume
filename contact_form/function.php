@@ -9,14 +9,14 @@ use SendGrid\Mail\PlainTextContent;
 use SendGrid\Mail\Subject;
 use SendGrid\Mail\To;
 
-function sendEmail($emailText)
+function sendEmail($senderEmail,$emailText)
 {
 
     // 使用sendgrid API發送郵件
     $from = new From("support@junting.tech", "JunTing");
     $tos = [
         new To(
-            "junting0218@gmail.com",
+            $senderEmail,
             "Example User1",
             [
                 '-emailBeginning-' => "表單已成功提交，您於<a href='https://junting.tech/resume/#contact'>網站</a>填寫的資訊如下，將會盡快回覆您，感謝"

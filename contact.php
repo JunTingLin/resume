@@ -90,10 +90,8 @@
                         <div class="g-recaptcha" data-sitekey="6Ld03eMgAAAAACgSE857zVHjrpLP0KcEa--t9wv1" data-theme="dark"></div>
 
                         <button class="button btn-send">
-                            <!-- <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i> -->
                             確定
                         </button>
-
                     </div>
                 </form>
             </div>

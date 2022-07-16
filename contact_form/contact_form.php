@@ -31,8 +31,8 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 }
             }
 
-            // sendEmail($emailText);
-            sleep(5);
+            sendEmail($_POST['email'],$emailText);
+            // sleep(5);
             $responseArray = array('type' => 'success', 'message' => $okMessage);
         }
         catch (\Exception $e)
