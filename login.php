@@ -1,6 +1,4 @@
 <?php
-//載入 db.php 檔案，讓我們可以透過它連接資料庫，因為此檔案放在 admin 裡，要找到 db.php 就要回上一層 ../php 裡面才能找到
-require_once 'php/db.php';
 
 //如過有 $_SESSION['is_login'] 這個值，以及 $_SESSION['is_login'] 為 true 都代表已登入
 if (isset($_SESSION['is_login']) && $_SESSION['is_login']) {
