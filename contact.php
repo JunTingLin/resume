@@ -1,3 +1,6 @@
+<?php
+require_once "php/config.php";
+?>
 <section data-id="contact" class="animated-section">
     <div class="page-title">
         <h2>聯絡我</h2>
@@ -10,21 +13,21 @@
             <div class="col-xs-12 col-sm-4">
                 <div class="lm-info-block gray-default">
                     <i class="lnr lnr-map-marker"></i>
-                    <h4>台北</h4>
+                    <h4>台北、桃園</h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>
 
                 <div class="lm-info-block gray-default">
                     <i class="lnr lnr-phone-handset"></i>
-                    <h4>0966777000</h4>
+                    <h4>暫不公開</h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>
 
                 <div class="lm-info-block gray-default">
                     <i class="lnr lnr-envelope"></i>
-                    <h4>109403537@cc.ncu.edu.tw</h4>
+                    <h4>support@junting.tech</h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>
@@ -87,15 +90,11 @@
                             </div>
                         </div>
 
-                        <div class="g-recaptcha" data-sitekey="6Ld03eMgAAAAACgSE857zVHjrpLP0KcEa--t9wv1" data-theme="dark"></div>
+                        <div class="g-recaptcha" data-sitekey=<?php echo recaptcha_site_key?> data-theme="dark"></div>
 
                         <button class="button btn-send">
                             確定
                         </button>
-                        <div class="alert alert-success alert-dismissible">
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <strong>Success!</strong> Indicates a successful or positive action.
-                        </div>
                     </div>
                 </form>
             </div>

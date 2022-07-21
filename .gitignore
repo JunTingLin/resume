@@ -1,0 +1,2 @@
+# 忽略 php 目錄下的 config.php 檔案
+php/config.php

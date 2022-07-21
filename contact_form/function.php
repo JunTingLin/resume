@@ -1,6 +1,6 @@
 <?php
 require './vendor/autoload.php';
-require_once 'config.php';
+require_once '../php/config.php';
 
 use SendGrid\Mail\From;
 use SendGrid\Mail\HtmlContent;

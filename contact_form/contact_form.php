@@ -1,6 +1,7 @@
 <?php
 
 require 'function.php';
+require_once '../php/config.php';
 
 $fields = array('name' => '姓名', 'email' => 'Email地址', 'subject' => '主旨', 'message' => '訊息內容'); // array variable name => Text to appear in the email. If you added or deleted a field in the contact form, edit this array.
 $okMessage = '表單已成功提交。將盡快回覆您，感謝！';
@@ -10,7 +11,7 @@ $errorMessage = '提交表單時出錯。請稍後再試';
 
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
     //your site secret key
-    $secret = '6Ld03eMgAAAAAKubsoIIvi8b5UtResAyApOY8Q3C';
+    $secret = recaptcha_secrete_key;
     //get verify response data
 
     $c = curl_init('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);

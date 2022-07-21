@@ -11,8 +11,8 @@
 <script src='js/owl.carousel.min.js'></script><!-- for 幻燈片 -->
 <script src="js/jquery.magnific-popup.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
-<script src="js/jquery.googlemap.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+<script src="js/jquery.googlemap.js"></script> -->
 <script src="js/validator.js"></script>
 <script src="js/main.js"></script>
 <!-- bootsrap js使用cdn -->

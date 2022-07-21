@@ -42,6 +42,7 @@ if (isset($_SESSION['is_login']) && $_SESSION['is_login']) {
                             <div class="col-sm-12 col-md-12 col-lg-12">
                                 <h1 id="login_title">後台登入</h1>
                                 <form class="login">
+                                    <div class="messages"></div>
                                     <div class="form-group">
                                         <label for="username">帳號</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="請輸入帳號" required>
@@ -63,7 +64,7 @@ if (isset($_SESSION['is_login']) && $_SESSION['is_login']) {
         </div>
     </div>
 
-  <?php
-  include_once 'js_quote.php';
-  ?>
+    <?php
+    include_once 'js_quote.php';
+    ?>
 </body>

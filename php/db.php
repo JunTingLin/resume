@@ -1,17 +1,10 @@
 <?php
 //啟動 session 等下要來儲存 連線後的資訊，前面加上 @ 是為了要讓此方法執行時，若有錯誤訊息不要顯示。
 @session_start();
-//先設定資料庫資訊，主機通常都用本機
-$host = 'localhost';
-//以root管理者帳號進入資料庫
-$dbuser = 'root';
-//root的資料庫密碼
-$dbpw = 'root';
-//登入後要使用的資料庫
-$dbname = 'resume';
+require_once "config.php";
 
 //宣告一個 link 變數，並執行連結資料庫函式 mysqli_connect()，連結結果會帶入 link 當中
-$_SESSION['link'] = mysqli_connect($host, $dbuser, $dbpw, $dbname);
+$_SESSION['link'] = mysqli_connect(db_host, db_user, db_pw, db_name);
 
 if ($_SESSION['link'])
 {

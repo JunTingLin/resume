@@ -69,10 +69,6 @@
 
         $('#contact_form').validator();
 
-        // $('#contact_form').submit(function() {
-        //     alert($(this).serialize());
-        //     return false;
-        //   });
         $('#contact_form').on('submit', function (e) {
             if (!e.isDefaultPrevented()) {
             //插入loading icon
@@ -120,8 +116,8 @@
             }
         })
         .on('resize', function() { //Resize
-             mobileMenuHide();
-             $('.animated-section').each(function() {
+            mobileMenuHide();
+            $('.animated-section').each(function() {
                 $(this).perfectScrollbar('update');
             });
             customScroll();
@@ -340,7 +336,10 @@
                     //登入成功，轉跳到後台首頁。
                     window.location.href = "backend/index.php"; //因為目前的 login.php 跟後端的 index.php 首頁在同一資料夾，所以直接叫他就好
                 } else {
-                    alert("登入失敗，請確認帳號密碼");
+                    var messageText = "登入失敗，請確認帳號密碼";
+                    var alertBox = '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    $("form.login").find(".messages").html(alertBox);
+                    // alert("登入失敗，請確認帳號密碼");
                 }
 
             }).fail(function(jqXHR, textStatus, errorThrown) {
