@@ -57,6 +57,7 @@ $str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
     <div class="social-links">
         <ul>
             <li><a href="https://github.com/JunTingLin" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/junting-lin-367339247" target="_blank"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://www.facebook.com/profile.php?id=100009889784302" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
             <li><a href="https://www.instagram.com/timothy_lin_91218/" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
