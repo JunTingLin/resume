@@ -82,7 +82,10 @@ $knowledges = get_knowledges();
                     <?php foreach ($skills as $skill) : ?>
                         <?php if ($skill["category"] == "美術") : ?>
                             <div class="skill clearfix">
-                                <h4><?php echo $skill["name"] ?></h4>
+                                <h4>
+                                    <svg width="20px" fill="<?php echo $skill["icon_color"] ?>" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><?php echo $skill["icon_path"] ?></svg>
+                                    <?php echo $skill["name"] ?>
+                                </h4>
                                 <div class="skill-value"><?php echo $skill["percent"] ?></div>
                             </div>
                             <div class="skill-container skill-1">
@@ -104,7 +107,10 @@ $knowledges = get_knowledges();
                     <?php foreach ($skills as $skill) : ?>
                         <?php if ($skill["category"] == "程式設計") : ?>
                             <div class="skill clearfix">
-                                <h4><?php echo $skill["name"] ?></h4>
+                                <h4>
+                                    <svg width="20px" fill="<?php echo $skill["icon_color"] ?>" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><?php echo $skill["icon_path"] ?></svg>
+                                    <?php echo $skill["name"] ?>
+                                </h4>
                                 <div class="skill-value"><?php echo $skill["percent"] ?></div>
                             </div>
                             <div class="skill-container skill-1">

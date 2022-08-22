@@ -6,7 +6,7 @@ require_once 'functions.php';
 //判別有無在登入狀態
 if(isset($_SESSION['is_login']) && $_SESSION['is_login']){
 	//執行新增使用者的方法，直接把整個 $_POST個別的照順序變數丟給方法。
-	$update_result = update_skill($_POST['id'], $_POST['category'], $_POST['name'], $_POST['percent']);
+	$update_result = update_skill($_POST['id'], $_POST['category'], $_POST['name'], $_POST['percent'], $_POST['icon_path'], $_POST['icon_color']);
 	
 	if($update_result)
 	{

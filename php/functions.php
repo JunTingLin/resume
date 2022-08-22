@@ -777,15 +777,14 @@ function update_experience($id, $title, $subtitle, $category, $intro, $date_star
 /**
  * 新增技能
  */
-function add_skill($category, $name, $percent)
+function add_skill($category, $name, $percent, $icon_path, $icon_color)
 {
   //宣告要回傳的結果
   $result = null;
 
   //新增語法
-  $sql = "INSERT INTO `skills` (`category`, `name`, `percent`)
-  				VALUE ('{$category}', '{$name}', '{$percent}');";
-
+  $sql = "INSERT INTO `skills` (`category`, `name`, `percent`, `icon_path`, `icon_color`)
+  				VALUES ('{$category}', '{$name}', '{$percent}', '{$icon_path}', '{$icon_color}');";
 
   //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
   $query = mysqli_query($_SESSION['link'], $sql);
@@ -837,15 +836,15 @@ function del_skill($id)
 /**
  * 更新技能
  */
-function update_skill($id, $category, $name, $percent)
+function update_skill($id, $category, $name, $percent, $icon_path, $icon_color)
 {
   //宣告要回傳的結果
   $result = null;
 
 
   //更新語法
-  $sql = "UPDATE `skills` SET `category` = '{$category}', `name` = '{$name}', `percent` = '{$percent}'
-  				  WHERE `id` = {$id};";
+  $sql = "UPDATE `skills` SET `category` = '{$category}', `name` = '{$name}', `percent` = '{$percent}', `icon_path`='{$icon_path}', `icon_color`='{$icon_color}'
+          WHERE `id` = {$id};";
 
   //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
   $query = mysqli_query($_SESSION['link'], $sql);

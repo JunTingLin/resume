@@ -64,7 +64,7 @@ $str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
     </div>
 
     <div class="header-buttons">
-        <a href="doc/CV.pdf" target="_blank" class="btn btn-primary">下載個人 CV</a>
+        <a href="doc/CV_V2.pdf" target="_blank" class="btn btn-primary">下載個人 CV</a>
     </div>
     <div class="header-buttons">
         <a href="login.php"  class="btn btn-primary"><span class="menu-icon lnr lnr-lock"></span>後台管理</a>

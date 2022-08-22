@@ -60,6 +60,16 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
               <input type="range" min="0" max="100" step="10" class="form-control" id="percent"></input>
             </div>
 
+            <div class="form-group">
+              <label for="icon_path">svg的點格，請參考<a href="https://simpleicons.org/" target="_blank">Simple Icons</a>裡面的icon，去掉&lt;tilte&gt;，只需填入整段&lt;path&gt;標籤 </label>
+              <textarea type="text" class="form-control" id="icon_path"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="icon_color">icon顏色，同上網址，附上色碼即可 </label>
+              <input type="text" class="form-control" id="icon_color"></input>
+            </div>
+
             <button type="submit" class="btn btn-default">
               儲存
             </button>
@@ -97,8 +107,10 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
             url: "../php/add_skill.php", //因為此檔案是放在 admin 資料夾內，若要前往 php，就要回上一層 ../ 找到 php 才能進入 add_article.php
             data: {
               category: $("input[name='category']:checked").val(), //種類
-              name: $("#name").val(), //簡介
-              percent: $("#percent").val(), //開始
+              name: $("#name").val(),
+              percent: $("#percent").val(),
+              icon_path: $("#icon_path").val(),
+              icon_color: $("#icon_color").val()
             },
             dataType: 'html' //設定該網頁回應的會是 html 格式
           }).done(function(data) {

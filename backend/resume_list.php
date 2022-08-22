@@ -100,6 +100,8 @@ $certificates = get_certificates()
                 <th>種類</th>
                 <th>技能名稱</th>
                 <th>百分比%</th>
+                <th>svg點格</th>
+                <th>icon填色</th>
               </tr>
             </thead>
             <tbody>
@@ -109,6 +111,15 @@ $certificates = get_certificates()
                     <td><?php echo $skill['category']; ?></td>
                     <td><?php echo $skill['name']; ?></td>
                     <td><?php echo $skill['percent']; ?></td>
+                    <td>
+                      <?php 
+                      $icon_path =  $skill['icon_path'];
+                      $icon_path =  str_replace("<","&lt;",$icon_path);
+                      $icon_path =  str_replace(">","&gt;",$icon_path);
+                      echo $icon_path!=null ? mb_substr($icon_path, 0, 15, "UTF-8") . "<br>... MORE" : "";
+                      ?>
+                    </td>
+                    <td><?php echo $skill['icon_color']; ?></td>
                     <td>
                       <a href='skill_edit.php?i=<?php echo $skill['id']; ?>' class="btn btn-success">編輯</a>
                       <a href='javascript:void(0);' class='btn btn-danger del_skill' data-id="<?php echo $skill['id']; ?>">刪除</a>
