@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3307
--- 產生時間： 2022-08-22 18:47:07
--- 伺服器版本： 10.4.18-MariaDB
--- PHP 版本： 8.0.3
+-- 產生時間： 2022-11-17 20:10:07
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -93,7 +93,7 @@ CREATE TABLE `experiences` (
   `subtitle` varchar(30) NOT NULL COMMENT '系/班級or職位',
   `intro` text NOT NULL COMMENT '簡介',
   `date_start` date NOT NULL COMMENT '開始日期',
-  `date_end` date NOT NULL COMMENT '結束日期'
+  `date_end` date DEFAULT NULL COMMENT '結束日期'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -103,7 +103,8 @@ CREATE TABLE `experiences` (
 INSERT INTO `experiences` (`id`, `category`, `title`, `subtitle`, `intro`, `date_start`, `date_end`) VALUES
 (1, '教育', '中央大學', '資訊管理學系', '「資手遮天，管遍天下，中央資管，全國第一」，是中央資管系的口號， 除了宿營、系烤、系卡、資管營外，學校校運會也是中央資管系一年一度的一大盛事， 中央資管系在校運會的表現一直還不錯，但其實是因為長期準備練習使然， 「要這麼得？先學會怎麼栽！」，中央資管不只傳授專業科目，更啟發我們人生哲學， 努力不懈的精神。', '2020-09-01', '2024-07-01'),
 (2, '教育', '再興中學', '資優班', '從國中一路到高中，對再興有著濃厚的情感， 再興像是嚴父也像是慈母，管得非常嚴，有髮禁， 服裝統一整齊劃一，有晚自習周六也必須上課， 但本質都是為我們好，希望未來能有一番成就。', '2017-09-01', '2020-07-01'),
-(3, '工作', '家教', '電腦影片剪輯', '輔導學生使用剪輯軟體-威力導演完成影片專案，自編教材，從0到1，帶學生入手', '2020-07-01', '2020-09-01');
+(3, '工作', '家教', '電腦影片剪輯', '輔導學生使用剪輯軟體-威力導演完成影片專案，自編教材，從0到1，帶學生入手', '2020-07-01', '2020-09-01'),
+(4, '工作', '中央大學應地所', '網管', '大三開始很榮幸面試上中央大學應用地質研究所的網管工作，主要負責所上官網的維護，使用WordPress進行網站架設，定期備份與更新資料；另外會負責維護網路設備，DHCP、DNS、Web server，這些都是架在NAS主機上，並且配有UPS，要定期去掃ip、踢mac等工作；還有協助所上整個的資安上的安全防護。', '2022-09-12', NULL);
 
 -- --------------------------------------------------------
 
@@ -293,7 +294,7 @@ ALTER TABLE `certificates`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `knowledges`

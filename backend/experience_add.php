@@ -53,10 +53,10 @@ if (!isset($_SESSION['is_login']) || !$_SESSION['is_login']) {
             <div class="form-group">
               <label for="category">類別 </label> <br>
               <label class="radio-inline">
-                <input type="radio" name="category" value="頒獎" checked>
+                <input type="radio" name="category" value="教育" checked>
                 教育 </label>
               <label class="radio-inline">
-                <input type="radio" name="category" value="活動">
+                <input type="radio" name="category" value="工作">
                 工作 </label>
             </div>
 

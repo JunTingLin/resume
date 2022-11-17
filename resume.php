@@ -55,13 +55,15 @@ $knowledges = get_knowledges();
                         <?php if ($an_exp["category"] == "工作") : ?>
                             <div class="timeline-item clearfix">
                                 <div class="left-part">
-                                    <h5 class="item-period">2020.07 - 2020.08</h5>
-                                    <span class="item-company">家教</span>
+                                    <?php if($an_exp["date_end"]==null) $an_exp["date_end"]=" " ?> 
+                                    <!-- 假如date_end為null，設個空字元給它，strtotime會自動抓取現在的時間 -->
+                                    <h5 class="item-period"><?php echo date("Y-m", strtotime($an_exp["date_start"])) . "~<br>" . date("Y-m", strtotime($an_exp["date_end"])); ?></h5>
+                                    <span class="item-company"><?php echo $an_exp["title"] ?></span>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="right-part">
-                                    <h4 class="item-title">電腦影片剪輯</h4>
-                                    <p>輔到學生使用剪輯軟體-威力導演完成影片專案，自編教材，從0到1，帶學生入手</p>
+                                    <h4 class="item-title"><?php echo $an_exp["subtitle"] ?></h4>
+                                    <p><?php echo $an_exp["intro"] ?></p>
                                 </div>
                             </div>
                         <?php endif; ?>
