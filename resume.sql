@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3307
--- 產生時間： 2022-11-17 20:10:07
+-- 產生時間： 2023-01-25 16:59:05
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -49,8 +49,9 @@ INSERT INTO `blogs` (`id`, `title`, `category`, `intro`, `people`, `tag`, `cover
 (2, '資管嘉年華-美宣組', '活動', '中央大學資管系資管嘉年華是大四學長姊們展現辛苦專題製作成果的活動，當時身為大一的我就主動加入活動策畫的一份子，我加入的是美宣組，主要負責海報製作、工作人員的名牌設計、拍貼機樣板圖片設計、場邊佈置、紀念品設計等等，並且在活動當天協助動線流程、拍照與攝影，光這個工作量可見要花非常多時間開會討論以及製作設計，還記得當初除了各組固定開會外，不同組(活動組、策展組)還要開三次籌會，兩次小籌，最後一次總籌。這個活動也讓我學習到Adobe Photoshop、Adobe Illustrator專業軟體、海報送印流程、攝影技巧、團隊合作等等，最後所有組員也去吃慶功宴慶祝這次活動的圓滿結束。', '美宣組組員', 'Photoshop、Illustrator、攝影、團隊合作、海報印刷', 'img/blog/MIS_carnival1.jpg', 'img/blog/MIS_carnival2.JPG', '2020-10-01', '2020-12-05'),
 (3, '系學會-新聞部', '活動', '當初面試上系學會新聞部時非常興奮，因為新聞部負責的系上內容剛好是我的最愛， 我喜愛剪輯攝影，在新聞部跟同儕切磋後，更增進了我這方面的知識，在部內除了負責 系上活動的攝影外，還要剪輯各式系上活動宣傳片(運動會、資管之夜、密室逃脫、傳情、送舊)， 也在學校舉辦過攝影比賽，除了技術上的知識外，更重要的是學習團隊合作與溝通。', '109新聞部部員', '系學會、新聞部、團隊合作、Adobe Premiere Pro 攝影、部出遊', 'img/blog/MIS_club1.jpg', 'img/blog/MIS_club2.jpg', '2020-10-01', '2021-09-01'),
 (4, '中央程式設計研究社', '活動', '加入程研社是我覺得收穫最多的，每次的社課都會請厲害的大神，舉凡學長姐或校友回來， 每次固定一個主題，印象較深的是linux，透過VM ware灌Ubuntu ISO，介紹常用指令，並透過 SSH建立本基端與虛擬主機的連線；還有像是git，我就是從上完那堂社課後才發現git的強大， 以前專案都複製好多份出來，命名copy1、copy2，既容易搞混又佔記憶體空間，有了這個強大的版本 控制系統，可以輕易管控版本，每個版本加上commit提交，更是便於多人撰寫專案，push上去pull回來 ，輕鬆搞定；當然還上了很多不同主題的社課，舉凡Laravel網頁框架、網頁安全CTF等等，都讓我獲益良多。', '程研社社員', 'Linux、Ubuntu、git、Laravel', 'img/blog/ncu_coding_club1.png', 'img/blog/ncu_coding_club2.png', '2021-02-02', NULL),
-(5, '榮獲管理學院-院長獎', '頒獎', '能拿到管理學院院長獎，並由院長親自頒發感到非常開心， 我的態度一直是秉持著做每件事都要努力盡力，大學的時光內除了課業外，也參加社團(程式設計研究社)、 參加系學會(新聞部)，跑過學校淨灘、107電影院...等等休閒活動，另外也不斷自我摸索 上網學習探索自己，展望未來。', '管院獲獎學生', '努力、堅持、學習、獲獎、成就', 'img/blog/award1.jpg', 'img/blog/award2.jpg', '2021-12-28', NULL),
-(6, 'Google Developer Student Club @ NCU', '活動', '除了參加程式設計研究社外， 這學期也開始加入學校Google Developer Student Club中央大學Google開發者社群的社課活動， 每隔幾周都會有不同的主題，大家一起討論一起實作，最有印象的是phpの黑魔法合輯：Laravel的活動， 了解到現在業界最常使用的框架MVC的技術， module、view、controller用controller來調用相關的view頁面，可以減輕工程師的負擔， 後續維護上也比較容易，不需要每一頁每一頁都修改相同的東西。 之後還接觸到google開放原始碼軟體套件Flutter， 透過線上FlutLab設計一個可以抓取中央氣象局api的UI介面， 學Flutter的好處也在於用一種程式語言(dart)寫一份Code能同時讓iOS與Android平台使用， 也支援Web以及桌面應用程式，一舉兩得。當然參加google club學到的還有Docker、goolge GCP等等。', 'Google Club社員', 'GCP、Flutter、Vertex AI、Laravel、Docker', 'img/blog/ncu_gdsc1.png', 'img/blog/ncu_gdsc2.png', '2022-05-16', NULL);
+(5, '109學年度-榮獲管理學院-院長獎', '頒獎', '能拿到管理學院院長獎，並由院長親自頒發感到非常開心， 我的態度一直是秉持著做每件事都要努力盡力，大學的時光內除了課業外，也參加社團(程式設計研究社)、 參加系學會(新聞部)，跑過學校淨灘、107電影院...等等休閒活動，另外也不斷自我摸索 上網學習探索自己，展望未來。', '管院獲獎學生', '努力、堅持、學習、獲獎、成就', 'img/blog/award1.jpg', 'img/blog/award2.jpg', '2021-12-28', '0000-00-00'),
+(6, 'Google Developer Student Club @ NCU', '活動', '除了參加程式設計研究社外， 這學期也開始加入學校Google Developer Student Club中央大學Google開發者社群的社課活動， 每隔幾周都會有不同的主題，大家一起討論一起實作，最有印象的是phpの黑魔法合輯：Laravel的活動， 了解到現在業界最常使用的框架MVC的技術， module、view、controller用controller來調用相關的view頁面，可以減輕工程師的負擔， 後續維護上也比較容易，不需要每一頁每一頁都修改相同的東西。 之後還接觸到google開放原始碼軟體套件Flutter， 透過線上FlutLab設計一個可以抓取中央氣象局api的UI介面， 學Flutter的好處也在於用一種程式語言(dart)寫一份Code能同時讓iOS與Android平台使用， 也支援Web以及桌面應用程式，一舉兩得。當然參加google club學到的還有Docker、goolge GCP等等。', 'Google Club社員', 'GCP、Flutter、Vertex AI、Laravel、Docker', 'img/blog/ncu_gdsc1.png', 'img/blog/ncu_gdsc2.png', '2022-05-16', NULL),
+(13, '110學年度-榮獲管理學院-院長獎', '頒獎', '很榮幸能再次獲得院長獎的殊榮，自己在大二上下兩學期付出的努力是有收穫的，也希望大三能夠繼續加油。', '管院獲獎學生', '努力 堅持 學習 獲獎 成就', 'img/blog/award3.jpg', 'img/blog/award4.jpg', '2022-12-27', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -282,7 +283,7 @@ ALTER TABLE `works`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `certificates`
