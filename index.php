@@ -53,11 +53,15 @@
                     <img src="img/myName_Ch.png">
                     <div class="owl-carousel text-rotation">
                       <div class="item">
-                        <div class="sp-subtitle">全端工程師</div>
+                        <div class="sp-subtitle">全端工程</div>
                       </div>
 
                       <div class="item">
-                        <div class="sp-subtitle">美工設計</div>
+                        <div class="sp-subtitle">系統分析</div>
+                      </div>
+
+                      <div class="item">
+                        <div class="sp-subtitle">雲端服務</div>
                       </div>
 
                       <div class="item">
