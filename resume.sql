@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3307
--- 產生時間： 2023-06-22 20:31:52
+-- 產生時間： 2023-06-23 13:13:13
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -198,7 +198,7 @@ CREATE TABLE `works` (
   `title` varchar(30) NOT NULL COMMENT '標題',
   `category` varchar(30) NOT NULL COMMENT '類別',
   `intro` text DEFAULT NULL COMMENT '簡介',
-  `team` varchar(30) DEFAULT NULL COMMENT '組員',
+  `team` varchar(60) DEFAULT NULL COMMENT '組員',
   `teacher` varchar(15) DEFAULT NULL COMMENT '指導老師',
   `website` text NOT NULL COMMENT '網站',
   `technology` varchar(120) DEFAULT NULL COMMENT '技術',
@@ -218,14 +218,15 @@ INSERT INTO `works` (`id`, `title`, `category`, `intro`, `team`, `teacher`, `web
 (1, '畢業典禮 高三愛班進場影片', 'YouTube影片', NULL, NULL, NULL, 'https://www.youtube.com/embed/VQvxd4mFkR8', NULL, 'img/portfolio/THSH2020_love.png', NULL, NULL, NULL, NULL, NULL),
 (2, '再興中學2020畢業MV', 'IG影片', NULL, NULL, NULL, 'https://www.instagram.com/p/CCL3WtMn6vc/?utm_source=ig_embed&ig_rid=4833dd43-5bba-417c-a3dd-9682aac03ef8', NULL, 'img/portfolio/THSH2020.png', NULL, NULL, NULL, NULL, NULL),
 (3, '2020高三愛班謝師宴影片', 'YouTube影片', NULL, NULL, NULL, 'https://www.youtube.com/embed/WAjTvYZWGW0', NULL, 'img/portfolio/THSH2020_teacher.jpg', NULL, NULL, NULL, NULL, NULL),
-(4, 'Ordering system (Java)', '專案', '不管是點套餐還是單點，全部都是由外部的CSV檔讀取， 可以很方便的更換菜單更換套餐組合，不需動到程式碼， 並且最後會列出收據明細給客人，會在店內的交易紀錄檔記錄下每筆訂單、時間等資訊。', '林俊霆、洪琬哲、謝理致、陳侑宣', '陳仲儼', 'https://github.com/JunTingLin/java_ordering_system', 'java、eclipse', 'img/portfolio/project2_java.jpg', 'img/portfolio/project2_java_1.png', 'img/portfolio/project2_java_2.png', 'img/portfolio/project2_java_3.png', 'img/portfolio/project2_java_4.png', '2021-06-18'),
-(5, 'NCU soccer game(Assembly)', '專案', '透過MASM32的函式庫搭配上課所學的ASM語法，打造出雙方可以互玩的足球射門遊戲， 一位玩家透過WASD控制方向，一位玩家透過上下左右控制移動，進對方球門得分， 獲勝後出現該玩家的大頭貼，按ENTER可再繼續遊戲。', '林俊霆、王柏勛、林采璇、洪琬哲', '鄭旭詠', 'https://github.com/JunTingLin/NCU_soccer_game', 'Assembly、C++、Masm32、MSDN Library', 'img/portfolio/project1_ASM.jpg', 'img/portfolio/project1_ASM_menu.jpg', 'img/portfolio/project1_ASM_xy_position.png', 'img/portfolio/project1_ASM_victor_player1.jpg', 'img/portfolio/project1_ASM_victor_player2.jpg', '2022-01-01'),
-(6, '蝦皮爬蟲&賣家競品分析(Python)', '專案', '在剛成為賣家不熟悉市場時 , 定價策略顯得尤其重要 為了找到在蝦皮上最佳銷售策略，所以撰寫了這支蝦皮賣家競品分析。 此次的目標很簡單，掌握競品情報來提高自己銷售業績：<br>\n1.找出商品的人氣特性<br>\n2.透過觀察價格分布決定價格,並預估收益<br>\n3.實際搜尋<br>\n4.找出賣家地理位置分布,決定賣場要設哪', '林俊霆、許珀維', '何政勳', 'https://github.com/brankhsu/python-project-crawler', 'Python、PyCharm', 'img/portfolio/project3_python.jpg', 'img/portfolio/project3_python_1.JPG', 'img/portfolio/project3_python_2.JPG', 'img/portfolio/project3_python_3.JPG', 'img/portfolio/project3_python_4.JPG', '2021-12-29'),
-(7, '陳仲儼教授-教學傑出選拔', 'YouTube影片', '', '', '', 'https://www.youtube.com/embed/JIUy_HhOj-Q', '', 'img/portfolio/Professor_Chen.png', '', '', '', '', '2022-02-27'),
+(4, 'Ordering system (Java)', '專案', '不管是點套餐還是單點，全部都是由外部的CSV檔讀取， 可以很方便的更換菜單更換套餐組合，不需動到程式碼， 並且最後會列出收據明細給客人，會在店內的交易紀錄檔記錄下每筆訂單、時間等資訊。', '林俊霆、洪琬哲、謝理致、陳侑宣', '陳仲儼', 'https://github.com/JunTingLin/java_ordering_system', 'java、eclipse', 'img/portfolio/project_Ordering-system.jpg', 'img/portfolio/project_Ordering-system_1.png', 'img/portfolio/project_Ordering-system_2.png', 'img/portfolio/project_Ordering-system_3.png', 'img/portfolio/project_Ordering-system_4.png', '2021-06-18'),
+(5, 'NCU soccer game(Assembly)', '專案', '透過MASM32的函式庫搭配上課所學的ASM語法，打造出雙方可以互玩的足球射門遊戲， 一位玩家透過WASD控制方向，一位玩家透過上下左右控制移動，進對方球門得分， 獲勝後出現該玩家的大頭貼，按ENTER可再繼續遊戲。', '林俊霆、王柏勛、林采璇、洪琬哲', '鄭旭詠', 'https://github.com/JunTingLin/NCU_soccer_game', 'Assembly、C++、Masm32、MSDN Library', 'img/portfolio/project_ASM.jpg', 'img/portfolio/project_ASM_menu.jpg', 'img/portfolio/project_ASM_xy_position.png', 'img/portfolio/project_ASM_victor_player1.jpg', 'img/portfolio/project_ASM_victor_player2.jpg', '2022-01-01'),
+(6, '蝦皮爬蟲&賣家競品分析(Python)', '專案', '在剛成為賣家不熟悉市場時 , 定價策略顯得尤其重要 為了找到在蝦皮上最佳銷售策略，所以撰寫了這支蝦皮賣家競品分析。 此次的目標很簡單，掌握競品情報來提高自己銷售業績：<br>\n1.找出商品的人氣特性<br>\n2.透過觀察價格分布決定價格,並預估收益<br>\n3.實際搜尋<br>\n4.找出賣家地理位置分布,決定賣場要設哪', '林俊霆、許珀維', '何政勳', 'https://github.com/brankhsu/python-project-crawler', 'Python、PyCharm', 'img/portfolio/project_python-crawler.jpg', 'img/portfolio/project_python-crawler_1.JPG', 'img/portfolio/project_python-crawler_2.JPG', 'img/portfolio/project_python-crawler_3.JPG', 'img/portfolio/project_python-crawler_4.JPG', '2021-12-29'),
+(7, '陳仲儼教授-教學傑出選拔', 'YouTube影片', '', '', '', 'https://www.youtube.com/embed/JIUy_HhOj-Q', '', 'img/portfolio/Professor_Chen1.png', '', '', '', '', '2022-02-27'),
 (8, '陳仲儼教授-教學傑出選拔v2', 'YouTube影片', '', '', '', 'https://www.youtube.com/embed/bbWvaSsORMQ', '', 'img/portfolio/Professor_Chen_v2.jpg', '', '', '', '', '2023-06-22'),
-(9, 'Multithread Web Socket Project', '專案', '本次OS作業要繳交Thread 小程式，因為對java比較熟悉，故選用java作為程式語言，用eclipse IDE開發。網路上看到許多用java多執行緒實現TCP網路的socket程式設計，但有鑑於求新求變，故基於TCP的架構下設計成可以「多人」連上sever「對玩」的井字小遊戲。', '林俊霆', '周立德', 'https://github.com/JunTingLin/multithread_project', 'java、eclipse、multi thread、web socket、java swing', 'img/portfolio/project4_java.jpg', 'img/portfolio/project4_java_1.png', 'img/portfolio/project4_java_2.png', 'img/portfolio/project4_java_3.png', 'img/portfolio/project4_java_4.png', '2022-05-18'),
-(82, 'NCU BookShop', '專案', '系統分析(SA)期末專案成品，此系統提供一個平台讓中央學生購買各教授的上課用書，系統上的書籍分類係根據系別來分類(例如：資工、資管、財金等)；會員可透過此系統瀏覽圖書和輸入關鍵字來搜尋需要的書籍，亦可點擊有興趣的書籍查看書籍詳細內容，如確定購買，可將訂購商品放入購物車，在購物車中可修改、刪除訂購數量；提供會員相關服務，如；圖書結帳、檢視訂單內容等。另提供後台管理員簡潔易上手的管理介面，使管理員從事管理作業(會員、書籍、訂單)更有效率。', '林俊霆、許珀維、王柏勛、賴思妤、陳佳妤、蘇湘婷', '葉羅堯', 'https://github.com/JunTingLin/BookShop-NCU-SA', 'java web、jsp、c3p0、commons-dbutils、jstl、commons-beanutils、commons-fileupload、Spring-security-crypto、mysql、springframework', 'img/portfolio/project5_SA.jpg', 'img/portfolio/project5_SA_1.png', 'img/portfolio/project5_SA_2.png', 'img/portfolio/project5_SA_3.png', 'img/portfolio/project5_SA_4.png', '2023-06-22'),
-(83, 'Classroom Reservation System', '專案', '這個專案是為中央大學應用地質研究所開發的教室預約系統。考慮到以前使用 Google 表單和日曆進行預約的方式混亂且難以管理，且缺乏身份驗證，任何人都可以進行預約。因此，本次專案使用 Spring Boot 和 Nas 上的 MariaDB 資料庫開發了一個簡單的預約系統。系統採用學校計中帳號的 Portal 單一登入認證機制，僅允許在學學生進行單一預約，而批量預約（例如課表）僅限指定的管理員帳號使用。', '林俊霆、王柏勛', '無', 'https://github.com/JunTingLin/Classroom-reservation-system', 'java、spring boot、 MariaDB、NAS', 'img/portfolio/project6_Classroom-reservation-system.jpg', 'img/portfolio/project6_Classroom-reservation-system_1.png', 'img/portfolio/project6_Classroom-reservation-system_2.png', 'img/portfolio/project6_Classroom-reservation-system_3.png', 'img/portfolio/project6_Classroom-reservation-system_4.png', '2023-06-22');
+(9, 'Multithread Web Socket Project', '專案', '本次OS作業要繳交Thread 小程式，因為對java比較熟悉，故選用java作為程式語言，用eclipse IDE開發。網路上看到許多用java多執行緒實現TCP網路的socket程式設計，但有鑑於求新求變，故基於TCP的架構下設計成可以「多人」連上sever「對玩」的井字小遊戲。', '林俊霆', '周立德', 'https://github.com/JunTingLin/multithread_project', 'java、eclipse、multi thread、web socket、java swing', 'img/portfolio/project_multithread.jpg', 'img/portfolio/project_multithread_1.png', 'img/portfolio/project_multithread_2.png', 'img/portfolio/project_multithread_3.png', 'img/portfolio/project_multithread_4.png', '2022-05-18'),
+(10, '電影票房預測系統', '專案', '這份專案是我修習機器學習的成果，分成兩個部分。期中是個人書面報告，我選用的是Kaggle上的「票房收入預測」主題，在報告內敘述參賽的動機、選題原因、如何實作、跟上課的關聯性，最後推測還有哪方面可以改善，可以讓排名進步。期末的專題剛好也是類似主題，而我在期末團隊中扮演的角色是負責前端UI跟服務架站，讓世界各地的人都能使用我們的電影票房預測系統。', '期中: 林俊霆；期末: 吳昇亮、林俊霆、羅向榮、呂采璇、梁恩維', '鐘祥仁', 'https://github.com/JunTingLin/ML_Box-Office', 'Python、ML、Data Preprocessing、Kaggle', 'img/portfolio/project_ML-movie.jpg', 'img/portfolio/project_ML-movie.jpg', 'img/portfolio/project_ML-movie_2.jpg', 'img/portfolio/project_ML-movie_3.png', 'img/portfolio/project_ML-movie_4.png', '2023-06-23'),
+(11, 'NCU BookShop', '專案', '系統分析(SA)期末專案成品，此系統提供一個平台讓中央學生購買各教授的上課用書，系統上的書籍分類係根據系別來分類(例如：資工、資管、財金等)；會員可透過此系統瀏覽圖書和輸入關鍵字來搜尋需要的書籍，亦可點擊有興趣的書籍查看書籍詳細內容，如確定購買，可將訂購商品放入購物車，在購物車中可修改、刪除訂購數量；提供會員相關服務，如；圖書結帳、檢視訂單內容等。另提供後台管理員簡潔易上手的管理介面，使管理員從事管理作業(會員、書籍、訂單)更有效率。', '林俊霆、許珀維、王柏勛、賴思妤、陳佳妤、蘇湘婷', '葉羅堯', 'https://github.com/JunTingLin/BookShop-NCU-SA', 'java web、jsp、c3p0、commons-dbutils、jstl、commons-beanutils、commons-fileupload、Spring-security-crypto、mysql、springframework', 'img/portfolio/project_SA.jpg', 'img/portfolio/project_SA_1.png', 'img/portfolio/project_SA_2.png', 'img/portfolio/project_SA_3.png', 'img/portfolio/project_SA_4.png', '2023-06-22'),
+(12, 'Classroom Reservation System', '專案', '這個專案是為中央大學應用地質研究所開發的教室預約系統。考慮到以前使用 Google 表單和日曆進行預約的方式混亂且難以管理，且缺乏身份驗證，任何人都可以進行預約。因此，本次專案使用 Spring Boot 和 Nas 上的 MariaDB 資料庫開發了一個簡單的預約系統。系統採用學校計中帳號的 Portal 單一登入認證機制，僅允許在學學生進行單一預約，而批量預約（例如課表）僅限指定的管理員帳號使用。', '林俊霆、王柏勛', '無', 'https://github.com/JunTingLin/Classroom-reservation-system', 'java、spring boot、 MariaDB、NAS', 'img/portfolio/project_Classroom-reservation-system.jpg', 'img/portfolio/project_Classroom-reservation-system_1.png', 'img/portfolio/project_Classroom-reservation-system_2.png', 'img/portfolio/project_Classroom-reservation-system_3.png', 'img/portfolio/project_Classroom-reservation-system_4.png', '2023-06-22');
 
 --
 -- 已傾印資料表的索引
@@ -317,7 +318,7 @@ ALTER TABLE `user`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '作品id', AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '作品id', AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
