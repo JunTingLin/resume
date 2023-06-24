@@ -327,7 +327,7 @@ function get_blogs()
   $datas = array();
 
   //將查詢語法當成字串，記錄在$sql變數中
-  $sql = "SELECT * FROM `blogs`;";
+  $sql = "SELECT * FROM `blogs`ORDER BY id DESC;";
 
   //用 mysqli_query 方法取執行請求（也就是sql語法），請求後的結果存在 $query 變數中
   $query = mysqli_query($_SESSION['link'], $sql);
