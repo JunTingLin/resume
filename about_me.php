@@ -31,7 +31,7 @@
 
             <li>
               <span class="title">e-mail</span>
-              <span class="value">109403537@cc.ncu.edu.tw、support@junting.tech</span>
+              <span class="value">109403537@cc.ncu.edu.tw、support@junting.info</span>
             </li>
 
             <li>

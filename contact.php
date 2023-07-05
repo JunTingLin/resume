@@ -27,7 +27,7 @@ require_once "php/config.php";
 
                 <div class="lm-info-block gray-default">
                     <i class="lnr lnr-envelope"></i>
-                    <h4>support@junting.tech</h4>
+                    <h4>support@junting.info</h4>
                     <span class="lm-info-block-value"></span>
                     <span class="lm-info-block-text"></span>
                 </div>

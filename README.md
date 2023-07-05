@@ -1,7 +1,7 @@
 # 🌎個人網站 My Website
-## https://junting.tech/resume
+## https://junting.info/resume
 
-此網站🖥主機使用[GCP](https://cloud.google.com/)
+此網站🖥主機使用AWS EC2
 
 CDN、DNS 託管🛒目前使用[CloudFlare](https://www.cloudflare.com/zh-tw/)
 
