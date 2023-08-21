@@ -99,6 +99,19 @@
                   我也曾使用Spring Boot開發過一些簡單的系統。</p>
               </div>
             </div>
+            <div class="info-block-w-icon">
+              <div class="ci-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="ci-text">
+                <h4>資安&雲端</h4>
+                <p>隨著資安事件接連發生，我深刻體認到保護數據和隱私的至關重要性。
+                  我堅信，這不僅是當前社會的重大議題，更是未來所面臨的主要挑戰。
+                  為了深化我的資安知識，我參加了LinkedIn上的「CompTIA Security+ 入門資安培訓」課程。
+                  該課程由資安專家Mike Chapple親自主講，並被廣大業界認可為資安初學者的理想起點。
+                  除此之外，我也取得了AWS的雲端證照，進一步鞏固我的雲端技能。</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
