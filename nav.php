@@ -11,7 +11,7 @@ $str =  strpos($_SERVER['PHP_SELF'], "index.php") != false ? "" : "index.php";
         </div>
         <div class="header-titles">
             <h2>林俊霆</h2>
-            <h4>Lin, Jun-Ting</h4>
+            <h4>Jun-Ting Lin</h4>
         </div>
     </div>
 
