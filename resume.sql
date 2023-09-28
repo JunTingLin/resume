@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3307
--- 產生時間： 2023-07-09 09:48:23
+-- 產生時間： 2023-09-06 18:14:17
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -63,7 +63,7 @@ CREATE TABLE `certificates` (
   `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL COMMENT '證照名稱',
   `serial_number` varchar(30) DEFAULT NULL COMMENT '證書ID',
-  `score` int(10) DEFAULT NULL COMMENT '分數',
+  `score` varchar(20) DEFAULT NULL COMMENT '分數',
   `cover` text NOT NULL COMMENT '封面位置',
   `path` text NOT NULL COMMENT 'pdf證書路徑',
   `date` date NOT NULL COMMENT '日期'
@@ -76,11 +76,11 @@ CREATE TABLE `certificates` (
 INSERT INTO `certificates` (`id`, `name`, `serial_number`, `score`, `cover`, `path`, `date`) VALUES
 (1, '中華民國電腦教育發展協會認證證書', NULL, NULL, 'img/clients/CCEA_logo.png', 'doc/中華民國電腦教育發展協會認證證書.pdf', '2020-03-16'),
 (2, '電子知識力創客能力證書', 'T0C200151', NULL, 'img/clients/TEMI_logo.png', 'doc/電子知識力創客能力證書.pdf', '2020-03-21'),
-(3, 'Java SE 8 Programmer OCA', '286101419OCAJSE8', 88, 'img/clients/oracle_logo.png', 'doc/Oracle Certified Associate, Java SE 8 Programmer.pdf\"', '2021-07-28'),
-(4, 'TOEIC多益藍色證書', NULL, 810, 'img/clients/TOEIC_logo.jpg', 'doc/多益藍色證書.pdf', '2021-08-26'),
-(5, 'Java SE 8 Programmer OCP', '286101419OCPJSE8', 86, 'img/clients/oracle_logo.png', 'doc/Oracle Certified Professional, Java SE 8 Programmer.pdf', '2021-09-08'),
-(6, 'Java EE 7 Application Developer', '286101419OCPJEE7AD', 85, 'img/clients/oracle_logo.png', 'doc/Oracle Certified Professional, Java EE 7 Application Developer.pdf', '2022-07-07'),
-(9, 'AWS Certified Cloud Practition', '', 0, 'img/clients/aws.png', '', '2023-07-08');
+(3, 'Java SE 8 Programmer OCA', '286101419OCAJSE8', '88/100', 'img/clients/oracle_logo.png', 'doc/Oracle Certified Associate, Java SE 8 Programmer.pdf\"', '2021-07-28'),
+(4, 'TOEIC多益藍色證書', NULL, '810/990', 'img/clients/TOEIC_logo.jpg', 'doc/多益藍色證書.pdf', '2021-08-26'),
+(5, 'Java SE 8 Programmer OCP', '286101419OCPJSE8', '86/100', 'img/clients/oracle_logo.png', 'doc/Oracle Certified Professional, Java SE 8 Programmer.pdf', '2021-09-08'),
+(6, 'Java EE 7 Application Developer', '286101419OCPJEE7AD', '85/100', 'img/clients/oracle_logo.png', 'doc/Oracle Certified Professional, Java EE 7 Application Developer.pdf', '2022-07-07'),
+(9, 'AWS Certified Cloud Practition', '7GNK0DV10FV41P9D', '891/1000', 'img/clients/aws.png', 'doc/AWS Certified Cloud Practitioner certificate.pdf', '2023-07-08');
 
 -- --------------------------------------------------------
 
@@ -91,8 +91,8 @@ INSERT INTO `certificates` (`id`, `name`, `serial_number`, `score`, `cover`, `pa
 CREATE TABLE `experiences` (
   `id` int(11) NOT NULL,
   `category` varchar(15) NOT NULL COMMENT '種類',
-  `title` varchar(30) NOT NULL COMMENT '學校名稱or工作',
-  `subtitle` varchar(30) NOT NULL COMMENT '系/班級or職位',
+  `title` varchar(50) NOT NULL COMMENT '學校名稱or工作',
+  `subtitle` varchar(50) NOT NULL COMMENT '系/班級or職位',
   `intro` text NOT NULL COMMENT '簡介',
   `date_start` date NOT NULL COMMENT '開始日期',
   `date_end` date DEFAULT NULL COMMENT '結束日期'
@@ -103,10 +103,11 @@ CREATE TABLE `experiences` (
 --
 
 INSERT INTO `experiences` (`id`, `category`, `title`, `subtitle`, `intro`, `date_start`, `date_end`) VALUES
-(1, '教育', '中央大學', '資訊管理學系', '「資手遮天，管遍天下，中央資管，全國第一」，是中央資管系的口號， 除了宿營、系烤、系卡、資管營外，學校校運會也是中央資管系一年一度的一大盛事， 中央資管系在校運會的表現一直還不錯，但其實是因為長期準備練習使然， 「要這麼得？先學會怎麼栽！」，中央資管不只傳授專業科目，更啟發我們人生哲學， 努力不懈的精神。', '2020-09-01', '2024-07-01'),
-(2, '教育', '再興中學', '資優班', '從國中一路到高中，對再興有著濃厚的情感， 再興之於我像是嚴父也像是慈母，管得非常嚴，有髮禁， 服裝統一整齊劃一，有晚自習周六也必須上課， 但本質都是為我們好，希望未來能有一番成就。', '2017-09-01', '2020-07-01'),
-(3, '工作', '中央大學應地所', '網管', '大三開始很榮幸面試上中央大學應用地質研究所的網管工作，主要負責所上官網的維護，使用WordPress進行網站架設，定期備份與更新資料；另外會負責維護網路設備，DHCP、DNS、Web server，這些都是架在NAS主機上，並且配有UPS，要定期去掃ip、踢mac等工作；還有協助所上整個的資安上的安全防護。', '2022-09-12', NULL),
-(4, '工作', '家教', '電腦影片剪輯', '輔導學生使用剪輯軟體-威力導演完成影片專案，自編教材，從無到有，帶學生入手。', '2020-07-01', '2020-09-01');
+(1, '教育', '再興中學', '資優班', '從國中一路到高中，對再興有著濃厚的情感， 再興之於我像是嚴父也像是慈母，管得非常嚴，有髮禁， 服裝統一整齊劃一，有晚自習周六也必須上課， 但本質都是為我們好，希望未來能有一番成就。', '2017-09-01', '2020-07-01'),
+(2, '教育', '國立中央大學', '資管系', '「資手遮天，管遍天下，中央資管，全國第一」，是中央資管系的口號， 除了宿營、系烤、系卡、資管營外，學校校運會也是中央資管系一年一度的一大盛事， 中央資管系在校運會的表現一直還不錯，但其實是因為長期準備練習使然， 「要這麼得？先學會怎麼栽！」，中央資管不只傳授專業科目，更啟發我們人生哲學， 努力不懈的精神。', '2020-09-01', '2024-07-01'),
+(3, '工作', '家教', '電腦影片剪輯', '輔導學生使用剪輯軟體-威力導演完成影片專案，自編教材，從無到有，帶學生入手。', '2020-07-01', '2020-09-01'),
+(4, '工作', '國立中央大學應地所', '網管', '大三開始很榮幸面試上國立中央大學應用地質研究所的網管工作，主要負責所上官網的維護，使用WordPress進行網站架設，定期備份與更新資料；另外會負責維護網路設備，DHCP、DNS、Web server，這些都是架在NAS主機上，並且配有UPS，要定期去掃ip、踢mac等工作；還有協助所上整個的資安上的安全防護。', '2022-09-12', NULL),
+(5, '工作', '國立中央大學企管系', '「程式設計：python」課程助教', 'TBA', '2023-09-11', NULL);
 
 -- --------------------------------------------------------
 
@@ -288,13 +289,13 @@ ALTER TABLE `blogs`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `certificates`
 --
 ALTER TABLE `certificates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `knowledges`
