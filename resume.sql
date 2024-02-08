@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3307
--- 產生時間： 2023-09-06 18:14:17
+-- 產生時間： 2024-02-08 16:12:21
 -- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.1.6
 
@@ -51,7 +51,8 @@ INSERT INTO `blogs` (`id`, `title`, `category`, `intro`, `people`, `tag`, `cover
 (4, '中央程式設計研究社', '活動', '加入程研社是我覺得收穫最多的，每次的社課都會請厲害的大神，舉凡學長姐或校友回來，每次固定一個主題，印象較深的是Linux，透過VM ware灌Ubuntu ISO，介紹常用指令，並透過SSH建立本機端與虛擬主機的連線；還有像是git，我就是從上完那堂社課後才發現git的強大，以前專案都複製好多份出來，命名copy1、copy2，既容易搞混又佔記憶體空間，有了這個強大的版本控制系統，可以輕易管控版本，每個版本加上commit提交，更是便於多人撰寫專案，push上去pull回來，輕鬆搞定；當然還上了很多不同主題的社課，舉凡Laravel網頁框架、網頁安全CTF等等，都讓我獲益良多。', '程研社社員', 'Linux、Ubuntu、git、Laravel', 'img/blog/ncu_coding_club1.png', 'img/blog/ncu_coding_club2.png', '2021-02-01', '2021-06-01'),
 (5, '109學年度-榮獲管理學院-院長獎', '頒獎', '能拿到管理學院院長獎，並由院長親自頒發感到非常開心，我的態度一直是秉持著做每件事都要努力盡力，大學的時光內除了課業外，也參加社團(程式設計研究社)、參加系學會(新聞部)，跑過學校淨灘、107電影院...等等休閒活動，另外也不斷自我摸索，上網學習探索自己，展望未來。', '管院獲獎學生', '努力、堅持、學習、獲獎、成就', 'img/blog/award1.jpg', 'img/blog/award2.jpg', '2021-12-28', NULL),
 (6, 'Google Developer Student Club @ NCU', '活動', '除了參加程式設計研究社外，這學期也開始加入學校Google Developer Student Club中央大學Google開發者社群的社課活動，每隔幾週都會有不同的主題，大家一起討論一起實作，最有印象的是phpの黑魔法合輯：Laravel的活動，了解到現在業界最常使用的框架MVC的技術， Module、View、Controller用Controller來調用相關的view頁面，可以減輕工程師的負擔，後續維護上也比較容易，不需要每一頁每一頁都修改相同的東西。之後還接觸到Google開放原始碼軟體套件Flutter， 透過線上FlutLab設計一個可以抓取中央氣象局Api的UI介面，學Flutter的好處也在於用一種程式語言(Dart)寫一份Code能同時讓ios與Android平台使用， 也支援Web以及桌面應用程式，一舉兩得。當然參加google club學到的還有Docker、goolge GCP等等。', 'Google Club社員', 'GCP、Flutter、Vertex AI、Laravel、Docker', 'img/blog/ncu_gdsc1.png', 'img/blog/ncu_gdsc2.png', '2021-09-01', '2021-12-01'),
-(13, '110學年度-榮獲管理學院-院長獎', '頒獎', '很榮幸能再次獲得院長獎的殊榮，自己在大二上下兩學期付出的努力是有收穫的，也希望大三能夠繼續加油。', '管院獲獎學生', '努力 堅持 學習 獲獎 成就', 'img/blog/award3.jpg', 'img/blog/award4.jpg', '2022-12-27', NULL);
+(13, '110學年度-榮獲管理學院-院長獎', '頒獎', '很榮幸能再次獲得院長獎的殊榮，自己在大二上下兩學期付出的努力是有收穫的，也希望大三能夠繼續加油。', '管院獲獎學生', '努力 堅持 學習 獲獎 成就', 'img/blog/award3.jpg', 'img/blog/award4.jpg', '2022-12-27', NULL),
+(14, '112學年度-資管系書卷獎代表', '頒獎', '很榮幸能代表資管系出席112學年度中央大學頒獎典禮', '全校性頒獎典禮', '獲獎', 'img/blog/DSC01223.JPG', 'img/blog/DSC01228.JPG', '2023-12-26', '2023-12-26');
 
 -- --------------------------------------------------------
 
@@ -104,10 +105,11 @@ CREATE TABLE `experiences` (
 
 INSERT INTO `experiences` (`id`, `category`, `title`, `subtitle`, `intro`, `date_start`, `date_end`) VALUES
 (1, '教育', '再興中學', '資優班', '從國中一路到高中，對再興有著濃厚的情感， 再興之於我像是嚴父也像是慈母，管得非常嚴，有髮禁， 服裝統一整齊劃一，有晚自習周六也必須上課， 但本質都是為我們好，希望未來能有一番成就。', '2017-09-01', '2020-07-01'),
-(2, '教育', '國立中央大學', '資管系', '「資手遮天，管遍天下，中央資管，全國第一」，是中央資管系的口號， 除了宿營、系烤、系卡、資管營外，學校校運會也是中央資管系一年一度的一大盛事， 中央資管系在校運會的表現一直還不錯，但其實是因為長期準備練習使然， 「要這麼得？先學會怎麼栽！」，中央資管不只傳授專業科目，更啟發我們人生哲學， 努力不懈的精神。', '2020-09-01', '2024-07-01'),
+(2, '教育', '國立中央大學', '資訊管理學系', '「資手遮天，管遍天下，中央資管，全國第一」，是中央資管系的口號， 除了宿營、系烤、系卡、資管營外，學校校運會也是中央資管系一年一度的一大盛事， 中央資管系在校運會的表現一直還不錯，但其實是因為長期準備練習使然， 「要這麼得？先學會怎麼栽！」，中央資管不只傳授專業科目，更啟發我們人生哲學， 努力不懈的精神。', '2020-09-01', '2024-07-01'),
 (3, '工作', '家教', '電腦影片剪輯', '輔導學生使用剪輯軟體-威力導演完成影片專案，自編教材，從無到有，帶學生入手。', '2020-07-01', '2020-09-01'),
 (4, '工作', '國立中央大學應地所', '網管', '大三開始很榮幸面試上國立中央大學應用地質研究所的網管工作，主要負責所上官網的維護，使用WordPress進行網站架設，定期備份與更新資料；另外會負責維護網路設備，DHCP、DNS、Web server，這些都是架在NAS主機上，並且配有UPS，要定期去掃ip、踢mac等工作；還有協助所上整個的資安上的安全防護。', '2022-09-12', NULL),
-(5, '工作', '國立中央大學企管系', '「程式設計：python」課程助教', 'TBA', '2023-09-11', NULL);
+(5, '工作', '國立中央大學企管系', '「程式設計：python」課程助教', '負責作業的批改，參與考試的命題工作，積極指導實作，協助同學深入理解程式邏輯', '2023-09-11', '2024-01-08'),
+(46, '教育', '國立中央大學', '資工網路多媒體研究所', 'TBA', '2024-09-01', '2026-09-01');
 
 -- --------------------------------------------------------
 
@@ -196,7 +198,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `name`) VALUES
 
 CREATE TABLE `works` (
   `id` int(11) NOT NULL COMMENT '作品id',
-  `title` varchar(30) NOT NULL COMMENT '標題',
+  `title` varchar(60) NOT NULL COMMENT '標題',
   `category` varchar(30) NOT NULL COMMENT '類別',
   `intro` text DEFAULT NULL COMMENT '簡介',
   `team` varchar(60) DEFAULT NULL COMMENT '組員',
@@ -227,7 +229,9 @@ INSERT INTO `works` (`id`, `title`, `category`, `intro`, `team`, `teacher`, `web
 (9, 'Multithread Web Socket Project', '專案', '本次OS作業要繳交Thread 小程式，因為對java比較熟悉，故選用java作為程式語言，用eclipse IDE開發。網路上看到許多用java多執行緒實現TCP網路的socket程式設計，但有鑑於求新求變，故基於TCP的架構下設計成可以「多人」連上server「對玩」的井字小遊戲。', '林俊霆', '周立德', 'https://github.com/JunTingLin/multithread_project', 'java、eclipse、multi thread、web socket、java swing', 'img/portfolio/project_multithread.jpg', 'img/portfolio/project_multithread_1.png', 'img/portfolio/project_multithread_2.png', 'img/portfolio/project_multithread_3.png', 'img/portfolio/project_multithread_4.png', '2022-05-18'),
 (10, '電影票房預測系統', '專案', '這份專案是我修習機器學習的成果，分成兩個部分。期中是個人書面報告，我選用的是Kaggle上的「票房收入預測」主題，在報告內敘述參賽的動機、選題原因、如何實作、跟上課的關聯性，最後推測還有哪方面可以改善，可以讓排名進步。期末的專題剛好也是類似主題，而我在期末團隊中扮演的角色是負責前端UI跟服務架站，讓世界各地的人都能使用我們的電影票房預測系統。', '期中: 林俊霆；期末: 吳昇亮、林俊霆、羅向榮、呂采璇、梁恩維', '鐘祥仁', 'https://github.com/JunTingLin/ML_Box-Office', 'Python、ML、Data Preprocessing、Kaggle', 'img/portfolio/project_ML-movie.jpg', 'img/portfolio/project_ML-movie.jpg', 'img/portfolio/project_ML-movie_2.jpg', 'img/portfolio/project_ML-movie_3.png', 'img/portfolio/project_ML-movie_4.png', '2023-06-23'),
 (11, 'NCU BookShop', '專案', '系統分析(SA)期末專案成品，此系統提供一個平台讓中央學生購買各教授的上課用書，系統上的書籍分類係根據系別來分類(例如：資工、資管、財金等)；會員可透過此系統瀏覽圖書和輸入關鍵字來搜尋需要的書籍，亦可點擊有興趣的書籍查看書籍詳細內容，如確定購買，可將訂購商品放入購物車，在購物車中可修改、刪除訂購數量；提供會員相關服務，如；圖書結帳、檢視訂單內容等。另提供後台管理員簡單易上手的管理介面，使管理員從事管理作業(會員、書籍、訂單)更有效率。', '林俊霆、許珀維、王柏勛、賴思妤、陳佳妤、蘇湘婷', '葉羅堯', 'https://github.com/JunTingLin/BookShop-NCU-SA', 'java web、jsp、c3p0、commons-dbutils、jstl、commons-beanutils、commons-fileupload、Spring-security-crypto、mysql、springframework', 'img/portfolio/project_SA.jpg', 'img/portfolio/project_SA_1.png', 'img/portfolio/project_SA_2.png', 'img/portfolio/project_SA_3.png', 'img/portfolio/project_SA_4.png', '2023-06-22'),
-(12, 'Classroom Reservation System', '專案', '這個專案是為中央大學應用地質研究所開發的教室預約系統。考慮到以前使用 Google 表單和日曆進行預約的方式有點混亂難以管理，且缺乏身份驗證，任何人都可以進行預約。因此，本次專案使用 Spring Boot 和 Nas 上的 MariaDB 資料庫開發了一個簡單的預約系統。系統採用學校計中帳號的 Portal 單一登入認證機制，僅允許在學學生進行單一預約，而批量預約（例如課表）僅限指定的管理員帳號使用。', '林俊霆、王柏勛', '無', 'https://github.com/JunTingLin/Classroom-reservation-system', 'java、spring boot、 MariaDB、NAS', 'img/portfolio/project_Classroom-reservation-system.jpg', 'img/portfolio/project_Classroom-reservation-system_1.png', 'img/portfolio/project_Classroom-reservation-system_2.png', 'img/portfolio/project_Classroom-reservation-system_3.png', 'img/portfolio/project_Classroom-reservation-system_4.png', '2023-06-22');
+(12, 'Classroom Reservation System', '專案', '這個專案是為中央大學應用地質研究所開發的教室預約系統。考慮到以前使用 Google 表單和日曆進行預約的方式有點混亂難以管理，且缺乏身份驗證，任何人都可以進行預約。因此，本次專案使用 Spring Boot 和 Nas 上的 MariaDB 資料庫開發了一個簡單的預約系統。系統採用學校計中帳號的 Portal 單一登入認證機制，僅允許在學學生進行單一預約，而批量預約（例如課表）僅限指定的管理員帳號使用。', '林俊霆、王柏勛', '無', 'https://github.com/JunTingLin/Classroom-reservation-system', 'java、spring boot、 MariaDB、NAS', 'img/portfolio/project_Classroom-reservation-system.jpg', 'img/portfolio/project_Classroom-reservation-system_1.png', 'img/portfolio/project_Classroom-reservation-system_2.png', 'img/portfolio/project_Classroom-reservation-system_3.png', 'img/portfolio/project_Classroom-reservation-system_4.png', '2023-06-22'),
+(14, '安專ˊ呷藥啊 - 防止藥物交互之手機藥袋辨識與智慧藥盒', '專案', '內容請見GitHub倉庫Readme', '林俊霆、王柏勛、許珀維、蘇湘婷、賴思妤', '胡雅涵', 'https://github.com/JunTingLin/drug_android_frontend', 'Android、Kotlin、Firebase、Google Design、Ardoino、google cloud vision、django、Python、Chatgpt、MySQL', 'img/portfolio/project_drug_menu.png', 'img/portfolio/project_drug_1.png', 'img/portfolio/project_drug_2.png', 'img/portfolio/project_drug_3.png', 'img/portfolio/project_drug_4.jpg', '2024-02-08'),
+(15, '經濟部OCR計劃', '專案', '內容請見GitHub倉庫Readme', '林俊霆', '胡雅涵', 'https://github.com/JunTingLin/MODA_company_OCR', 'Python、Qt Designer、google cloud vision、SonarQube', 'img/portfolio/project_ocr_menu.png', 'img/portfolio/project_ocr_1.png', '', '', '', '2024-02-08');
 
 --
 -- 已傾印資料表的索引
@@ -283,7 +287,7 @@ ALTER TABLE `works`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `certificates`
@@ -295,7 +299,7 @@ ALTER TABLE `certificates`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `knowledges`
@@ -319,7 +323,7 @@ ALTER TABLE `user`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '作品id', AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '作品id', AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

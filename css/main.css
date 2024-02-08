@@ -1405,7 +1405,7 @@ textarea.form-control, textarea.form-control:focus {
   opacity: .7;
 } */
 .certi-other{
-  font-size: .10em;
+  font-size: 0.9em;
   color: #777;
 }
 /* --- End of Certificates --- */
