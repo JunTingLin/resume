@@ -3,7 +3,7 @@
 
 This website 🖥 is now hosted on a Raspberry Pi running Ubuntu 22.04.
 
-The CDN and DNS are currently managed by [CloudFlare](https://www.cloudflare.com/), with dynamic IP updates handled by [CloudFlare-DDNS](https://github.com/yourusername/cloudflare-ddns.git).
+The CDN and DNS are currently managed by [CloudFlare](https://www.cloudflare.com/), with dynamic IP updates handled by [CloudFlare-DDNS](https://github.com/JunTingLin/cloudflare-ddns.git).
 
 SMTP email service 📧 is provided by [SendGrid](https://sendgrid.com/).
 
