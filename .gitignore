@@ -1,2 +1,4 @@
-# 忽略 php 目錄下的 config.php 檔案
 php/config.php
+
+# Ignore all CSS files for language statistics
+*.css linguist-vendored
