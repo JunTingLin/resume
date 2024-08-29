@@ -1,16 +1,12 @@
-# 🌎個人網站 My Website
+# 🌎 Personal Website
 ## https://junting.info/resume
 
-此網站🖥主機使用AWS EC2
+This website 🖥 is now hosted on a Raspberry Pi running Ubuntu 22.04.
 
-CDN、DNS 託管🛒目前使用[CloudFlare](https://www.cloudflare.com/zh-tw/)
+The CDN and DNS are currently managed by [CloudFlare](https://www.cloudflare.com/), with dynamic IP updates handled by [CloudFlare-DDNS](https://github.com/yourusername/cloudflare-ddns.git).
 
-SMTP郵件服務📧使用[SendGrid](https://sendgrid.com/)
-
-<font color=#FF0000 size=4>🚩注意: </font>
-
-部屬在[github page的舊版網站](https://juntinglin.github.io/resume/)，已停止更新，並將於2022.08.31下線，請轉移到上方新網址，感謝
+SMTP email service 📧 is provided by [SendGrid](https://sendgrid.com/).
 
 <font color=#FF0000 size=4>🚩Note: </font>
 
-[The old website on the github](https://juntinglin.github.io/resume/) page has stopped updating and will be offline on 2022.08.31, please move to the new website above, thanks
+The old website hosted on the [GitHub Pages](https://juntinglin.github.io/resume/) has stopped updating and will be offline on 2022.08.31. Please move to the new website above. Thanks.
